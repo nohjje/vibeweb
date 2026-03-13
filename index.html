@@ -7,580 +7,432 @@
   <meta name="description" content="AI와 대화하듯 개발하는 바이브코딩. 기획부터 배포까지 실무급 프로젝트를 완성하는 가장 빠른 방법입니다." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-<!-- ════════════════════════════════════════════
-     HEADER
-════════════════════════════════════════════ -->
+<!-- ════════════ HEADER ════════════ -->
 <header id="header">
-  <a href="#" class="logo">AI 바이브<span class="logo-accent">웹</span></a>
-  <nav>
-    <a href="#intro">소개</a>
-    <a href="#curriculum">커리큘럼</a>
-    <a href="#techstack">기술스택</a>
-    <a href="#effect">기대효과</a>
-    <a href="#community">커뮤니티</a>
-    <a href="#community" class="btn-cta">수강신청 →</a>
-  </nav>
-</header>
-
-<!-- ════════════════════════════════════════════
-     HERO
-════════════════════════════════════════════ -->
-<div id="hero-wrap">
-  <div class="blob blob-1"></div>
-  <div class="blob blob-2"></div>
-
-  <div id="hero">
-    <!-- Left copy -->
-    <div class="hero-copy">
-      <div class="hero-eyebrow">
-        <span class="eyebrow-dot"></span>
-        AI 시대의 새로운 개발 방식
-      </div>
-
-      <h1 class="hero-title">
-        <span class="line">바이브코딩으로</span>
-        <span class="line"><em class="accent">빠르게</em> 만들고</span>
-        <span class="line">바로 배포하세요</span>
-      </h1>
-
-      <p class="hero-desc">
-        AI와 대화하듯 개발하는 바이브코딩. 문법 암기 없이
-        기획부터 배포까지, 실무급 프로젝트를 완성하는
-        가장 빠른 방법입니다.
-      </p>
-
-      <div class="hero-actions">
-        <a href="#community" class="btn-cta">무료로 시작하기 →</a>
-        <a href="#intro" class="btn-ghost">바이브코딩이란?</a>
-      </div>
-
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-num">1/5</span>
-          <span class="stat-label">기존 대비 학습 시간</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num">2단계</span>
-          <span class="stat-label">기초 + 심화 과정</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num">전 연령</span>
-          <span class="stat-label">누구나 수강 가능</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Right Visual — Code Editor -->
-    <div class="hero-visual">
-      <div class="editor-shell">
-        <!-- Titlebar -->
-        <div class="editor-titlebar">
-          <div class="dot-row">
-            <span class="dot-r"></span>
-            <span class="dot-y"></span>
-            <span class="dot-g"></span>
-          </div>
-          <div class="tab-bar">
-            <div class="tab active">index.html</div>
-            <div class="tab">style.css</div>
-            <div class="tab">main.js</div>
-          </div>
-        </div>
-
-        <!-- Code Body -->
-        <div class="editor-body">
-          <div class="line-nums">
-            <span>1</span><span>2</span><span>3</span><span>4</span>
-            <span>5</span><span>6</span><span>7</span><span>8</span>
-            <span>9</span><span>10</span><span>11</span><span>12</span>
-            <span>13</span><span>14</span>
-          </div>
-          <div class="code-area">
-            <div class="code-line"><span class="cm">&lt;!-- AI 바이브웹 --&gt;</span></div>
-            <div class="code-line"><span class="kw">&lt;section</span> <span class="fn">class</span>=<span class="str">"hero"</span><span class="kw">&gt;</span></div>
-            <div class="code-line">&nbsp;&nbsp;<span class="kw">&lt;div</span> <span class="fn">class</span>=<span class="str">"hero-title"</span><span class="kw">&gt;</span></div>
-            <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="pl">바이브코딩으로</span></div>
-            <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="cl">&lt;em&gt;</span><span class="str">빠르게</span><span class="cl">&lt;/em&gt;</span> <span class="pl">배포</span></div>
-            <div class="code-line">&nbsp;&nbsp;<span class="kw">&lt;/div&gt;</span></div>
-            <div class="code-line"></div>
-            <div class="code-line">&nbsp;&nbsp;<span class="kw">&lt;script&gt;</span></div>
-            <div class="code-line active-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">const</span> <span class="fn">ai</span> = <span class="kw">new</span> <span class="cl">VibeCoder</span>({</div>
-            <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">model</span>: <span class="str">'claude'</span>,</div>
-            <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">stack</span>: [<span class="str">'HTML'</span>,<span class="str">'JS'</span>],</div>
-            <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">deploy</span>: <span class="str">'vercel'</span>,</div>
-            <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;});<span class="cu"></span></div>
-            <div class="code-line">&nbsp;&nbsp;<span class="kw">&lt;/script&gt;</span></div>
-          </div>
-        </div>
-
-        <!-- Status Bar -->
-        <div class="editor-statusbar">
-          <div class="status-left">
-            <span>⎇ main</span>
-            <span>✓ 배포 완료</span>
-            <span>HTML · JS</span>
-          </div>
-          <div class="status-right">UTF-8 · Vercel</div>
-        </div>
-      </div>
-
-      <!-- Floating Badges -->
-      <div class="float-badge fb1">
-        <span class="badge-icon">⚡</span>
-        <div>
-          <strong>즉시 생성</strong>
-          <span class="badge-sub">AI가 코드를 작성합니다</span>
-        </div>
-      </div>
-      <div class="float-badge fb2">
-        <span class="badge-icon">🚀</span>
-        <div>
-          <strong>바로 배포</strong>
-          <span class="badge-sub">Vercel 원클릭 배포</span>
-        </div>
-      </div>
-      <div class="float-badge fb3">
-        <span class="badge-icon">🤖</span>
-        <div>
-          <strong>AI 디버깅</strong>
-          <span class="badge-sub">에러를 자동으로 수정</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ════════════════════════════════════════════
-     MARQUEE
-════════════════════════════════════════════ -->
-<div class="marquee-wrap">
-  <div class="marquee-track">
-    <!-- set 1 -->
-    <div class="marquee-item">
-      <span class="hi">바이브코딩</span><span class="marquee-sep"></span>
-      <span>HTML5</span><span class="marquee-sep"></span>
-      <span>CSS3</span><span class="marquee-sep"></span>
-      <span>JavaScript</span><span class="marquee-sep"></span>
-      <span class="hi">Supabase</span><span class="marquee-sep"></span>
-      <span>Vercel</span><span class="marquee-sep"></span>
-      <span>GitHub</span><span class="marquee-sep"></span>
-      <span>React Native</span><span class="marquee-sep"></span>
-      <span class="hi">AI 개발</span><span class="marquee-sep"></span>
-      <span>풀스택</span><span class="marquee-sep"></span>
-      <span>포트폴리오</span><span class="marquee-sep"></span>
-      <span>앱 배포</span>
-    </div>
-    <!-- set 2 (duplicate for seamless) -->
-    <div class="marquee-item">
-      <span class="hi">바이브코딩</span><span class="marquee-sep"></span>
-      <span>HTML5</span><span class="marquee-sep"></span>
-      <span>CSS3</span><span class="marquee-sep"></span>
-      <span>JavaScript</span><span class="marquee-sep"></span>
-      <span class="hi">Supabase</span><span class="marquee-sep"></span>
-      <span>Vercel</span><span class="marquee-sep"></span>
-      <span>GitHub</span><span class="marquee-sep"></span>
-      <span>React Native</span><span class="marquee-sep"></span>
-      <span class="hi">AI 개발</span><span class="marquee-sep"></span>
-      <span>풀스택</span><span class="marquee-sep"></span>
-      <span>포트폴리오</span><span class="marquee-sep"></span>
-      <span>앱 배포</span>
-    </div>
-  </div>
-</div>
-
-<!-- ════════════════════════════════════════════
-     소개 SECTION
-════════════════════════════════════════════ -->
-<section id="intro">
-  <div class="container">
-    <div class="intro-grid">
-
-      <!-- Left: Definition + Compare -->
-      <div>
-        <span class="sec-eyebrow reveal">소개</span>
-        <h2 class="sec-title reveal d1">바이브코딩이란?</h2>
-        <p class="sec-desc reveal d2">
-          <strong>"Vibe"(분위기·감각) + "Coding"</strong>의 합성어.<br>
-          AI와 자연스럽게 대화하며 직관적인 흐름으로 완성하는
-          새로운 개발 방식입니다.
-        </p>
-
-        <!-- Compare Table -->
-        <div class="compare-table reveal d3">
-          <div class="compare-head">
-            <div class="compare-head-cell old">일반 코딩</div>
-            <div class="compare-head-cell new">바이브코딩</div>
-          </div>
-          <div class="compare-body">
-            <div class="compare-col-body old">
-              <div class="compare-row-item"><span class="row-dot old"></span>문법 암기</div>
-              <div class="compare-row-item"><span class="row-dot old"></span>코드 작성</div>
-              <div class="compare-row-item"><span class="row-dot old"></span>디버깅</div>
-              <div class="compare-row-item"><span class="row-dot old"></span>결과 확인</div>
-              <div class="compare-row-item old">→ 긴 학습 곡선</div>
-            </div>
-            <div class="compare-col-body new">
-              <div class="compare-row-item"><span class="row-dot new"></span>AI와 대화</div>
-              <div class="compare-row-item"><span class="row-dot new"></span>즉각적 구현</div>
-              <div class="compare-row-item"><span class="row-dot new"></span>빠른 수정</div>
-              <div class="compare-row-item"><span class="row-dot new"></span>실시간 결과</div>
-              <div class="compare-row-item new">→ 짧은 학습 곡선</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right: Forecast -->
-      <div>
-        <span class="sec-eyebrow reveal">전망</span>
-        <h2 class="sec-title reveal d1">AI 개발의 미래</h2>
-        <p class="sec-desc reveal d2">개발자의 역할이 바뀌고 있습니다. 먼저 준비하는 사람이 앞서 나갑니다.</p>
-
-        <div class="forecast-stack">
-          <div class="forecast-card reveal d2">
-            <span class="fc-icon">📈</span>
-            <span class="fc-text">AI 보조 개발이 <strong>업계 표준</strong>으로 자리잡는 추세</span>
-          </div>
-          <div class="forecast-card reveal d3">
-            <span class="fc-icon">🔄</span>
-            <span class="fc-text">개발자 역할이 <strong>"코드 작성자"</strong>에서 <strong>"프로젝트 기획·관리자"</strong>로 진화</span>
-          </div>
-          <div class="forecast-card reveal d4">
-            <span class="fc-icon">🌍</span>
-            <span class="fc-text"><strong>비전공자도 실무급 프로젝트</strong>를 구현할 수 있는 시대 도래</span>
-          </div>
-          <div class="forecast-card reveal d5">
-            <span class="fc-icon">⚡</span>
-            <span class="fc-text">빠른 프로토타이핑과 개발에 <strong>최적화된 방법론</strong></span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════════
-     커리큘럼 SECTION
-════════════════════════════════════════════ -->
-<section id="curriculum">
-  <div class="container">
-    <div class="curr-head">
-      <div>
-        <span class="sec-eyebrow reveal">커리큘럼</span>
-        <h2 class="sec-title reveal d1">단계별 학습 과정</h2>
-      </div>
-      <p class="sec-desc reveal d2" style="max-width:340px;">기초부터 모바일 앱 배포까지, 실전 중심 커리큘럼으로 바로 써먹을 수 있는 역량을 키웁니다.</p>
-    </div>
-
-    <div class="curr-grid">
-      <div class="curr-card reveal d1">
-        <div class="curr-num">01</div>
-        <div class="curr-level">기초 과정</div>
-        <h3>포트폴리오 웹사이트</h3>
-        <ul>
-          <li>HTML·CSS·JS 기반 퍼블리싱</li>
-          <li>반응형 레이아웃 구성</li>
-          <li>Vercel 실무 배포</li>
-        </ul>
-        <div class="curr-bar"></div>
-      </div>
-      <div class="curr-card reveal d2">
-        <div class="curr-num">02</div>
-        <div class="curr-level">기초 과정</div>
-        <h3>로그인·회원가입 구현</h3>
-        <ul>
-          <li>Supabase Auth 연동</li>
-          <li>세션 관리</li>
-          <li>보안 기초</li>
-        </ul>
-        <div class="curr-bar"></div>
-      </div>
-      <div class="curr-card reveal d3">
-        <div class="curr-num">03</div>
-        <div class="curr-level">기초 과정</div>
-        <h3>게시판 CRUD</h3>
-        <ul>
-          <li>Supabase DB 설계</li>
-          <li>생성·읽기·수정·삭제</li>
-          <li>실시간 업데이트</li>
-        </ul>
-        <div class="curr-bar"></div>
-      </div>
-      <div class="curr-card reveal d4" style="border-color:rgba(232,97,58,.2);background:rgba(232,97,58,.03);">
-        <div class="curr-num" style="color:rgba(232,97,58,.2);">04</div>
-        <div class="curr-level">심화 과정</div>
-        <h3>모바일 앱 개발</h3>
-        <ul>
-          <li>React Native + Expo</li>
-          <li>SNS 기능·카메라 연동</li>
-          <li>앱스토어 배포</li>
-        </ul>
-        <div class="curr-bar"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════════
-     기술스택 SECTION
-════════════════════════════════════════════ -->
-<section id="techstack">
-  <div class="container">
-    <div class="tech-head">
-      <span class="sec-eyebrow reveal">기술스택</span>
-      <h2 class="sec-title reveal d1">사용하는 기술들</h2>
-      <p class="sec-desc reveal d2">현업에서 검증된 기술 조합으로 빠르게 실무 역량을 쌓습니다.</p>
-    </div>
-
-    <!-- Flow Diagram -->
-    <div class="flow-wrap">
-      <div class="flow-node reveal d1">
-        <div class="node-icon">💡</div>
-        <div class="node-label">아이디어</div>
-        <div class="node-sub">기획·설계</div>
-      </div>
-      <div class="flow-connector"></div>
-      <div class="flow-node reveal d2">
-        <div class="node-icon">🤖</div>
-        <div class="node-label">AI 코딩</div>
-        <div class="node-sub">Claude Code</div>
-      </div>
-      <div class="flow-connector"></div>
-      <div class="flow-node active reveal d3">
-        <div class="node-icon">💻</div>
-        <div class="node-label">코드 완성</div>
-        <div class="node-sub">HTML·CSS·JS</div>
-      </div>
-      <div class="flow-connector"></div>
-      <div class="flow-node reveal d4">
-        <div class="node-icon">🧪</div>
-        <div class="node-label">테스트</div>
-        <div class="node-sub">디버깅·수정</div>
-      </div>
-      <div class="flow-connector"></div>
-      <div class="flow-node reveal d5">
-        <div class="node-icon">🚀</div>
-        <div class="node-label">배포 완료</div>
-        <div class="node-sub">Vercel</div>
-      </div>
-    </div>
-
-    <!-- Tech Groups -->
-    <div class="tech-grid">
-      <div class="tech-group reveal d1">
-        <div class="tech-group-title">프론트엔드</div>
-        <div class="tech-pills">
-          <span class="tech-pill">HTML5</span>
-          <span class="tech-pill">CSS3</span>
-          <span class="tech-pill">JavaScript</span>
-          <span class="tech-pill">React Native</span>
-          <span class="tech-pill">Expo</span>
-        </div>
-      </div>
-      <div class="tech-group reveal d2">
-        <div class="tech-group-title">백엔드 · 데이터베이스</div>
-        <div class="tech-pills">
-          <span class="tech-pill">Supabase</span>
-          <span class="tech-pill">PostgreSQL</span>
-          <span class="tech-pill">Auth</span>
-          <span class="tech-pill">Realtime DB</span>
-        </div>
-      </div>
-      <div class="tech-group reveal d3">
-        <div class="tech-group-title">배포 · 협업</div>
-        <div class="tech-pills">
-          <span class="tech-pill">Vercel</span>
-          <span class="tech-pill">GitHub</span>
-          <span class="tech-pill">Git</span>
-          <span class="tech-pill">앱스토어</span>
-        </div>
-      </div>
-      <div class="tech-group reveal d4">
-        <div class="tech-group-title">AI 도구</div>
-        <div class="tech-pills">
-          <span class="tech-pill">Claude Code</span>
-          <span class="tech-pill">AI 프롬프팅</span>
-          <span class="tech-pill">AI 디버깅</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════════
-     기대효과 SECTION
-════════════════════════════════════════════ -->
-<section id="effect">
-  <div class="container">
-    <div class="effect-layout">
-
-      <!-- Left: effect items -->
-      <div>
-        <span class="sec-eyebrow reveal">기대효과</span>
-        <h2 class="sec-title reveal d1">배우고 나면<br>달라지는 것들</h2>
-
-        <div class="effect-sub-label good reveal d2">✅ 실제 가능한 것들</div>
-        <div class="effect-cards">
-          <div class="effect-card good reveal d2">
-            <h4>🗺️ 프로젝트 전체 흐름 이해</h4>
-            <p>기획부터 배포까지 전 과정을 경험하며 각 기술이 어떻게 연결되는지 구조적으로 파악합니다.</p>
-          </div>
-          <div class="effect-card good reveal d3">
-            <h4>🤖 AI 도구 활용 능력</h4>
-            <p>Claude Code와 효과적으로 협업하는 프롬프팅 능력과 에러 해결 실무 역량을 갖춥니다.</p>
-          </div>
-          <div class="effect-card good reveal d4">
-            <h4>⚡ 시간 대비 높은 완성도</h4>
-            <p>전통적 학습 대비 1/5 시간으로 실무급 프로젝트를 완성하고 즉각적 피드백으로 빠른 학습 사이클을 경험합니다.</p>
-          </div>
-          <div class="effect-card good reveal d5">
-            <h4>📁 실전 포트폴리오 확보</h4>
-            <p>취업·이직에 바로 활용 가능한 실제 배포된 웹사이트와 GitHub 저장소 관리 경험을 얻습니다.</p>
-          </div>
-        </div>
-
-        <div class="effect-sub-label limit reveal" style="margin-top:36px;">⚠️ 한계점</div>
-        <div class="effect-cards">
-          <div class="effect-card limit reveal d1">
-            <h4>🏗️ 거대 프로젝트의 한계</h4>
-            <p>엔터프라이즈급·대규모 마이크로서비스 아키텍처에는 아직 한계가 있습니다.</p>
-          </div>
-          <div class="effect-card limit reveal d2">
-            <h4>📚 깊은 기초 지식 부족 가능성</h4>
-            <p>자료구조·알고리즘 같은 CS 기초는 별도 학습이 필요합니다.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right: Bar Chart -->
-      <div>
-        <div class="chart-wrap reveal d2">
-          <div class="chart-title">수료 전 · 후 역량 비교</div>
-          <div class="bar-chart">
-            <div class="bar-row">
-              <div class="bar-name">프로젝트 이해</div>
-              <div class="bar-group">
-                <div class="bar-track"><div class="bar-fill before" data-w="20%"></div></div>
-                <div class="bar-track"><div class="bar-fill after"  data-w="90%"></div></div>
-              </div>
-            </div>
-            <div class="bar-row">
-              <div class="bar-name">AI 활용 능력</div>
-              <div class="bar-group">
-                <div class="bar-track"><div class="bar-fill before" data-w="10%"></div></div>
-                <div class="bar-track"><div class="bar-fill after"  data-w="85%"></div></div>
-              </div>
-            </div>
-            <div class="bar-row">
-              <div class="bar-name">배포 경험</div>
-              <div class="bar-group">
-                <div class="bar-track"><div class="bar-fill before" data-w="15%"></div></div>
-                <div class="bar-track"><div class="bar-fill after"  data-w="88%"></div></div>
-              </div>
-            </div>
-            <div class="bar-row">
-              <div class="bar-name">포트폴리오</div>
-              <div class="bar-group">
-                <div class="bar-track"><div class="bar-fill before" data-w="5%"></div></div>
-                <div class="bar-track"><div class="bar-fill after"  data-w="80%"></div></div>
-              </div>
-            </div>
-            <div class="bar-row">
-              <div class="bar-name">개발 속도</div>
-              <div class="bar-group">
-                <div class="bar-track"><div class="bar-fill before" data-w="18%"></div></div>
-                <div class="bar-track"><div class="bar-fill after"  data-w="92%"></div></div>
-              </div>
-            </div>
-          </div>
-          <div class="chart-legend">
-            <div class="legend-item"><div class="legend-dot before"></div> 수료 전</div>
-            <div class="legend-item"><div class="legend-dot after"></div> 수료 후</div>
-          </div>
-        </div>
-
-        <!-- Slogan Card -->
-        <div class="reveal d3" style="margin-top:24px; background:var(--espresso); border-radius:20px; padding:36px; position:relative; overflow:hidden;">
-          <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%, rgba(232,97,58,.18), transparent 70%);pointer-events:none;"></div>
-          <p style="font-family:'Playfair Display',serif; font-size:1.2rem; color:#fff; line-height:1.55; position:relative;">
-            "바이브코딩으로 빠르게 프로젝트를 제작하며<br>
-            <em style="color:var(--coral);">풀스택 웹 개발</em>을 경험할 수 있습니다."
-          </p>
-          <p style="font-size:.82rem; color:rgba(255,255,255,.38); margin-top:14px; position:relative;">
-            AI 시대의 실용적 개발 역량에 도전해보세요.
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════════
-     커뮤니티 SECTION
-════════════════════════════════════════════ -->
-<section id="community">
-  <div class="container">
-    <div class="comm-head">
-      <span class="sec-eyebrow reveal">커뮤니티</span>
-      <h2 class="sec-title reveal d1">함께 성장하는 공간</h2>
-      <p class="sec-desc reveal d2">로그인 후 자유게시판, 질문·답변, 프로젝트 공유 등 커뮤니티 기능을 이용할 수 있습니다.</p>
-    </div>
-
-    <div class="comm-grid">
-      <div class="comm-card reveal d1">
-        <div class="comm-icon-wrap">💬</div>
-        <h3>자유게시판</h3>
-        <p>수강생들과 자유롭게 소통하고 학습 경험을 공유합니다.</p>
-        <div class="comm-badge">🔒 로그인 후 이용 가능</div>
-      </div>
-      <div class="comm-card reveal d2">
-        <div class="comm-icon-wrap">🙋</div>
-        <h3>질문·답변</h3>
-        <p>막히는 부분을 질문하고 서로 도움을 주고받는 공간입니다.</p>
-        <div class="comm-badge">🔒 로그인 후 이용 가능</div>
-      </div>
-      <div class="comm-card reveal d3">
-        <div class="comm-icon-wrap">🗂️</div>
-        <h3>프로젝트 공유</h3>
-        <p>완성한 프로젝트를 공유하고 피드백을 받아보세요.</p>
-        <div class="comm-badge">🔒 로그인 후 이용 가능</div>
-      </div>
-    </div>
-
-    <!-- CTA Dark Banner -->
-    <div class="cta-dark reveal">
-      <div class="cta-glow"></div>
-      <h2>바이브코딩으로 풀스택을 경험하세요</h2>
-      <p>AI 시대의 실용적 개발 역량에 도전해보세요. 지금 바로 시작할 수 있습니다.</p>
-      <div class="cta-form">
-        <input type="email" placeholder="이메일을 입력하세요" />
-        <a href="#" class="btn-cta">수강신청 하기 →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════════
-     FOOTER
-════════════════════════════════════════════ -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-logo">AI 바이브<span class="accent">웹</span></div>
-    <div class="footer-links">
+  <div class="header-inner">
+    <a href="#" class="logo">AI 바이브<span>웹</span></a>
+    <nav>
       <a href="#intro">소개</a>
       <a href="#curriculum">커리큘럼</a>
       <a href="#techstack">기술스택</a>
       <a href="#effect">기대효과</a>
       <a href="#community">커뮤니티</a>
+    </nav>
+    <div class="header-cta">
+      <a href="#community" class="btn-outline">로그인</a>
+      <a href="#community" class="btn-fill">무료로 시작하기</a>
     </div>
-    <div class="footer-copy">© 2025 AI바이브웹. All rights reserved.</div>
+  </div>
+</header>
+
+<!-- ════════════ HERO ════════════ -->
+<section id="hero">
+  <div class="hero-ambient a1"></div>
+  <div class="hero-ambient a2"></div>
+  <div class="hero-ambient a3"></div>
+
+  <div class="hero-inner">
+    <div class="hero-badge reveal">
+      <span class="badge-pulse"></span>
+      AI 시대의 새로운 개발 방식 &nbsp;·&nbsp; 바이브코딩
+    </div>
+    <h1 class="hero-h1 reveal d1">
+      코드 없이<br>
+      <em>AI와 함께</em><br>
+      실무 프로젝트 완성
+    </h1>
+    <p class="hero-sub reveal d2">
+      바이브코딩으로 기획부터 배포까지.<br>
+      문법 암기 없이 누구나 풀스택 개발을 경험합니다.
+    </p>
+    <div class="hero-btns reveal d3">
+      <a href="#community" class="btn-fill btn-lg">무료로 시작하기 →</a>
+      <a href="#intro" class="btn-outline btn-lg">바이브코딩이란?</a>
+    </div>
+    <div class="hero-stats reveal d4">
+      <div class="hstat">
+        <span class="hstat-n">1/5</span>
+        <span class="hstat-l">기존 대비 학습 시간</span>
+      </div>
+      <span class="hstat-div"></span>
+      <div class="hstat">
+        <span class="hstat-n">4개</span>
+        <span class="hstat-l">실전 프로젝트</span>
+      </div>
+      <span class="hstat-div"></span>
+      <div class="hstat">
+        <span class="hstat-n">전연령</span>
+        <span class="hstat-l">누구나 수강 가능</span>
+      </div>
+      <span class="hstat-div"></span>
+      <div class="hstat">
+        <span class="hstat-n">100%</span>
+        <span class="hstat-l">실제 배포 프로젝트</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Browser Mockup -->
+  <div class="mockup-stage reveal d4">
+    <div class="mockup-bar">
+      <span class="mb-dot r"></span><span class="mb-dot y"></span><span class="mb-dot g"></span>
+      <div class="mb-url">vibeweb.vercel.app</div>
+      <div class="mb-icons">⟳ ↗</div>
+    </div>
+    <div class="mockup-content">
+      <div class="sim-nav">
+        <div class="sim-logo"></div>
+        <div class="sim-links">
+          <div class="sl"></div><div class="sl"></div><div class="sl"></div>
+          <div class="sl-btn"></div>
+        </div>
+      </div>
+      <div class="sim-hero">
+        <div class="sh-badge"></div>
+        <div class="sh-h1"></div>
+        <div class="sh-h2"></div>
+        <div class="sh-btns"><div class="sh-b1"></div><div class="sh-b2"></div></div>
+        <div class="sh-cards">
+          <div class="shc" style="animation-delay:0s"></div>
+          <div class="shc" style="animation-delay:.15s"></div>
+          <div class="shc" style="animation-delay:.3s"></div>
+          <div class="shc" style="animation-delay:.45s"></div>
+        </div>
+      </div>
+    </div>
+    <div class="mk-badge mk1"><span>✅</span><div><strong>배포 완료</strong><br><small>vibeweb.vercel.app</small></div></div>
+    <div class="mk-badge mk2"><span>⚡</span><div><strong>AI 생성</strong><br><small>Claude Code</small></div></div>
+    <div class="mk-badge mk3"><span>🔥</span><div><strong>실시간 저장</strong><br><small>Supabase DB</small></div></div>
+  </div>
+</section>
+
+<!-- ════════════ LOGO STRIP ════════════ -->
+<div class="logo-strip">
+  <div class="ls-label">사용하는 기술 스택</div>
+  <div class="ls-logos">
+    <div class="ls-logo"><span>⚡</span><span>Supabase</span></div>
+    <div class="ls-logo"><span>▲</span><span>Vercel</span></div>
+    <div class="ls-logo"><span>◉</span><span>GitHub</span></div>
+    <div class="ls-logo"><span>🤖</span><span>Claude Code</span></div>
+    <div class="ls-logo"><span>📱</span><span>React Native</span></div>
+    <div class="ls-logo"><span>🌐</span><span>HTML · CSS · JS</span></div>
+    <div class="ls-logo"><span>🔧</span><span>Expo</span></div>
+  </div>
+</div>
+
+<!-- ════════════ 소개 SECTION ════════════ -->
+<section id="intro" class="section-dark">
+  <div class="container">
+    <div class="intro-layout">
+      <div class="intro-left">
+        <span class="sec-chip reveal">소개</span>
+        <h2 class="sec-h2 reveal d1">일반 코딩과<br>무엇이 다른가요?</h2>
+        <p class="sec-p reveal d2">바이브코딩은 AI와 대화하는 것처럼 개발합니다. 문법을 외울 필요 없이, 원하는 것을 말하면 AI가 코드를 완성합니다.</p>
+        <div class="compare-visual reveal d3">
+          <div class="cv-col old">
+            <div class="cv-head"><span class="cv-icon">🐢</span><span class="cv-title">일반 코딩</span></div>
+            <div class="cv-steps">
+              <div class="cv-step">문법 암기</div>
+              <div class="cv-arrow">↓</div>
+              <div class="cv-step">코드 작성</div>
+              <div class="cv-arrow">↓</div>
+              <div class="cv-step">에러 디버깅</div>
+              <div class="cv-arrow">↓</div>
+              <div class="cv-step">결과 확인</div>
+            </div>
+            <div class="cv-result bad">긴 학습 곡선 😓</div>
+          </div>
+          <div class="cv-vs">VS</div>
+          <div class="cv-col new">
+            <div class="cv-head"><span class="cv-icon">🚀</span><span class="cv-title">바이브코딩</span></div>
+            <div class="cv-steps">
+              <div class="cv-step hi">AI와 대화</div>
+              <div class="cv-arrow">↓</div>
+              <div class="cv-step hi">즉각 구현</div>
+              <div class="cv-arrow">↓</div>
+              <div class="cv-step hi">빠른 수정</div>
+              <div class="cv-arrow">↓</div>
+              <div class="cv-step hi">실시간 배포</div>
+            </div>
+            <div class="cv-result good">빠른 완성 🎉</div>
+          </div>
+        </div>
+      </div>
+      <div class="intro-right">
+        <span class="sec-chip reveal">전망</span>
+        <h2 class="sec-h2 reveal d1">AI 개발의 미래</h2>
+        <div class="forecast-grid">
+          <div class="fc-card reveal d2">
+            <div class="fc-num">01</div>
+            <div class="fc-icon-lg">📈</div>
+            <h4>업계 표준으로 자리잡는 추세</h4>
+            <p>AI 보조 개발이 개발자의 기본 역량으로 자리잡고 있습니다.</p>
+          </div>
+          <div class="fc-card reveal d3">
+            <div class="fc-num">02</div>
+            <div class="fc-icon-lg">🔄</div>
+            <h4>개발자 역할의 진화</h4>
+            <p>"코드 작성자"에서 "프로젝트 기획·관리자"로 역할이 변화합니다.</p>
+          </div>
+          <div class="fc-card reveal d4">
+            <div class="fc-num">03</div>
+            <div class="fc-icon-lg">🌍</div>
+            <h4>비전공자도 실무급 구현</h4>
+            <p>누구나 실무급 프로젝트를 만들 수 있는 시대가 왔습니다.</p>
+          </div>
+          <div class="fc-card reveal d5">
+            <div class="fc-num">04</div>
+            <div class="fc-icon-lg">⚡</div>
+            <h4>빠른 프로토타이핑</h4>
+            <p>아이디어를 즉시 구현하고 피드백을 받는 빠른 개발 사이클.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ 커리큘럼 SECTION ════════════ -->
+<section id="curriculum" class="section-light">
+  <div class="container">
+    <div class="sec-center">
+      <span class="sec-chip dark reveal">커리큘럼</span>
+      <h2 class="sec-h2 dark reveal d1">단계별 학습 과정</h2>
+      <p class="sec-p dark center reveal d2">기초부터 모바일 앱 배포까지, 실전 중심의 커리큘럼</p>
+    </div>
+    <div class="curr-timeline">
+      <div class="ct-item reveal d1">
+        <div class="ct-line-wrap"><div class="ct-dot active"></div><div class="ct-line"></div></div>
+        <div class="ct-card">
+          <div class="ct-meta"><span class="ct-level">기초 과정</span><span class="ct-tag">Week 1–2</span></div>
+          <h3>포트폴리오 웹사이트 제작</h3>
+          <p>HTML·CSS·JS로 반응형 포트폴리오를 만들고 Vercel로 실제 배포합니다.</p>
+          <div class="ct-skills"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Vercel</span></div>
+        </div>
+      </div>
+      <div class="ct-item reveal d2">
+        <div class="ct-line-wrap"><div class="ct-dot"></div><div class="ct-line"></div></div>
+        <div class="ct-card">
+          <div class="ct-meta"><span class="ct-level">기초 과정</span><span class="ct-tag">Week 3–4</span></div>
+          <h3>로그인·회원가입 기능 구현</h3>
+          <p>Supabase Auth를 연동해 실제 인증 시스템을 구현합니다.</p>
+          <div class="ct-skills"><span>Supabase</span><span>Auth</span><span>PostgreSQL</span></div>
+        </div>
+      </div>
+      <div class="ct-item reveal d3">
+        <div class="ct-line-wrap"><div class="ct-dot"></div><div class="ct-line"></div></div>
+        <div class="ct-card">
+          <div class="ct-meta"><span class="ct-level">기초 과정</span><span class="ct-tag">Week 5–6</span></div>
+          <h3>게시판 CRUD 개발</h3>
+          <p>데이터베이스를 설계하고 실시간 게시판을 완성합니다.</p>
+          <div class="ct-skills"><span>Supabase DB</span><span>CRUD</span><span>Realtime</span></div>
+        </div>
+      </div>
+      <div class="ct-item reveal d4">
+        <div class="ct-line-wrap"><div class="ct-dot coral"></div></div>
+        <div class="ct-card highlight">
+          <div class="ct-meta"><span class="ct-level coral">심화 과정</span><span class="ct-tag">Week 7+</span></div>
+          <h3>모바일 앱 개발 &amp; 배포</h3>
+          <p>React Native + Expo로 SNS 앱을 만들고 앱스토어에 출시합니다.</p>
+          <div class="ct-skills"><span>React Native</span><span>Expo</span><span>카메라</span><span>앱스토어</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ 기술스택 SECTION ════════════ -->
+<section id="techstack" class="section-dark">
+  <div class="container">
+    <div class="sec-center">
+      <span class="sec-chip reveal">기술스택</span>
+      <h2 class="sec-h2 reveal d1">현업에서 바로 쓰는 기술들</h2>
+      <p class="sec-p reveal d2">검증된 기술 조합으로 실무 역량을 빠르게 쌓습니다.</p>
+    </div>
+    <div class="tech-feature-grid">
+      <div class="tf-card large reveal d1">
+        <div class="tf-glow"></div>
+        <div class="tf-icon">🤖</div>
+        <h3>Claude Code</h3>
+        <p>AI와 자연어로 대화하며 코드를 생성합니다. 에러가 나도 AI가 즉시 수정합니다.</p>
+        <div class="tf-tag">AI 코딩 도구</div>
+      </div>
+      <div class="tf-card reveal d2">
+        <div class="tf-icon">⚡</div>
+        <h3>Supabase</h3>
+        <p>PostgreSQL 기반 백엔드를 코드 없이 구성합니다.</p>
+        <div class="tf-tag">데이터베이스</div>
+      </div>
+      <div class="tf-card reveal d3">
+        <div class="tf-icon">🚀</div>
+        <h3>Vercel</h3>
+        <p>GitHub 연동으로 1분 안에 전 세계 배포가 완료됩니다.</p>
+        <div class="tf-tag">배포 플랫폼</div>
+      </div>
+      <div class="tf-card reveal d4">
+        <div class="tf-icon">📱</div>
+        <h3>React Native</h3>
+        <p>하나의 코드베이스로 iOS와 Android 앱을 동시에 만듭니다.</p>
+        <div class="tf-tag">모바일 개발</div>
+      </div>
+      <div class="tf-card reveal d5">
+        <div class="tf-icon">🌐</div>
+        <h3>HTML · CSS · JS</h3>
+        <p>웹의 기본 언어로 어떤 디자인도 자유롭게 구현합니다.</p>
+        <div class="tf-tag">웹 퍼블리싱</div>
+      </div>
+    </div>
+    <div class="flow-line reveal">
+      <div class="fl-step"><div class="fl-icon">💡</div><span>아이디어</span></div>
+      <div class="fl-arr">→</div>
+      <div class="fl-step"><div class="fl-icon">🤖</div><span>AI 코딩</span></div>
+      <div class="fl-arr">→</div>
+      <div class="fl-step active"><div class="fl-icon">💻</div><span>코드 완성</span></div>
+      <div class="fl-arr">→</div>
+      <div class="fl-step"><div class="fl-icon">🧪</div><span>테스트</span></div>
+      <div class="fl-arr">→</div>
+      <div class="fl-step"><div class="fl-icon">🚀</div><span>배포 완료</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ 기대효과 SECTION ════════════ -->
+<section id="effect" class="section-light">
+  <div class="container">
+    <div class="sec-center">
+      <span class="sec-chip dark reveal">기대효과</span>
+      <h2 class="sec-h2 dark reveal d1">배우고 나면 달라집니다</h2>
+      <p class="sec-p dark center reveal d2">수료 후 실제로 달라지는 역량들을 확인하세요</p>
+    </div>
+    <div class="eff-grid">
+      <div class="eff-card big reveal d1">
+        <div class="eff-num">01</div>
+        <div class="eff-emoji">🗺️</div>
+        <h3>프로젝트 전체 흐름 이해</h3>
+        <p>기획 → 개발 → 배포까지 전 과정을 직접 경험하며 큰 그림을 파악합니다.</p>
+        <div class="eff-bar"><div class="eff-bar-fill" data-w="90%"></div></div>
+        <div class="eff-bar-label"><span>수료 전 20%</span><span>수료 후 90%</span></div>
+      </div>
+      <div class="eff-card reveal d2">
+        <div class="eff-num">02</div>
+        <div class="eff-emoji">🤖</div>
+        <h3>AI 도구 활용 능력</h3>
+        <p>Claude Code와 협업하는 프롬프팅 능력과 AI 디버깅 실무 역량을 갖춥니다.</p>
+        <div class="eff-bar"><div class="eff-bar-fill" data-w="85%"></div></div>
+        <div class="eff-bar-label"><span>10%</span><span>85%</span></div>
+      </div>
+      <div class="eff-card reveal d3">
+        <div class="eff-num">03</div>
+        <div class="eff-emoji">⚡</div>
+        <h3>1/5의 시간, 실무급 완성도</h3>
+        <p>전통 학습 대비 5배 빠르게 실무급 프로젝트를 완성합니다.</p>
+        <div class="eff-bar"><div class="eff-bar-fill" data-w="88%"></div></div>
+        <div class="eff-bar-label"><span>18%</span><span>88%</span></div>
+      </div>
+      <div class="eff-card reveal d4">
+        <div class="eff-num">04</div>
+        <div class="eff-emoji">📁</div>
+        <h3>실전 포트폴리오 확보</h3>
+        <p>취업·이직에 바로 쓸 수 있는 실제 배포된 웹사이트와 앱을 보유합니다.</p>
+        <div class="eff-bar"><div class="eff-bar-fill" data-w="80%"></div></div>
+        <div class="eff-bar-label"><span>5%</span><span>80%</span></div>
+      </div>
+    </div>
+    <div class="limit-strip reveal">
+      <div class="ls-head">⚠️ 솔직한 한계점</div>
+      <div class="ls-items">
+        <div class="ls-item"><span class="ls-icon">🏗️</span><div><strong>거대 프로젝트</strong><p>엔터프라이즈급 대규모 시스템은 아직 어렵습니다.</p></div></div>
+        <div class="ls-item"><span class="ls-icon">📚</span><div><strong>CS 기초 지식</strong><p>자료구조·알고리즘은 별도 학습이 필요합니다.</p></div></div>
+        <div class="ls-item"><span class="ls-icon">🔌</span><div><strong>AI 의존도</strong><p>AI 없이는 같은 속도 유지가 어려울 수 있습니다.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ 커뮤니티 SECTION ════════════ -->
+<section id="community" class="section-dark">
+  <div class="container">
+    <div class="sec-center">
+      <span class="sec-chip reveal">커뮤니티</span>
+      <h2 class="sec-h2 reveal d1">함께 성장하는 공간</h2>
+      <p class="sec-p reveal d2">로그인 후 자유게시판, Q&amp;A, 프로젝트 공유가 가능합니다.</p>
+    </div>
+    <div class="comm-bento">
+      <div class="cb-card wide reveal d1">
+        <div class="cb-icon">💬</div>
+        <h3>자유게시판</h3>
+        <p>수강생들과 학습 경험을 자유롭게 나눕니다.</p>
+        <div class="cb-preview">
+          <div class="cbp-row"><div class="cbp-avatar"></div><div class="cbp-text"><div class="cbp-t"></div><div class="cbp-s"></div></div></div>
+          <div class="cbp-row"><div class="cbp-avatar"></div><div class="cbp-text"><div class="cbp-t"></div><div class="cbp-s"></div></div></div>
+          <div class="cbp-row muted"><div class="cbp-avatar"></div><div class="cbp-text"><div class="cbp-t"></div><div class="cbp-s"></div></div></div>
+        </div>
+        <div class="cb-lock">🔒 로그인 후 이용</div>
+      </div>
+      <div class="cb-card reveal d2">
+        <div class="cb-icon">🙋</div>
+        <h3>질문·답변</h3>
+        <p>막히는 부분을 질문하고 서로 도움을 주고받습니다.</p>
+        <div class="cb-lock">🔒 로그인 후 이용</div>
+      </div>
+      <div class="cb-card reveal d3">
+        <div class="cb-icon">🗂️</div>
+        <h3>프로젝트 공유</h3>
+        <p>완성한 프로젝트를 공유하고 피드백을 받으세요.</p>
+        <div class="cb-lock">🔒 로그인 후 이용</div>
+      </div>
+    </div>
+    <!-- CTA -->
+    <div class="cta-block reveal">
+      <div class="cta-glow"></div>
+      <div class="cta-grid-bg"></div>
+      <div class="cta-content">
+        <div class="cta-badge">🚀 지금 시작하기</div>
+        <h2>바이브코딩으로<br><em>풀스택을 경험하세요</em></h2>
+        <p>AI 시대의 실용적 개발 역량에 도전해보세요.<br>지금 이메일을 등록하면 무료로 시작할 수 있습니다.</p>
+        <div class="cta-form">
+          <input type="email" placeholder="이메일을 입력하세요" />
+          <button class="btn-fill">수강신청 하기 →</button>
+        </div>
+        <div class="cta-note">✓ 무료로 시작 &nbsp;·&nbsp; ✓ 언제든 취소 가능 &nbsp;·&nbsp; ✓ 스팸 없음</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ FOOTER ════════════ -->
+<footer>
+  <div class="footer-top">
+    <div class="ft-brand">
+      <div class="footer-logo">AI 바이브<span>웹</span></div>
+      <p>AI 시대의 실용적 개발 역량,<br>바이브코딩으로 경험하세요.</p>
+    </div>
+    <div class="ft-links">
+      <div class="ftl-col">
+        <div class="ftl-head">페이지</div>
+        <a href="#intro">소개</a>
+        <a href="#curriculum">커리큘럼</a>
+        <a href="#techstack">기술스택</a>
+        <a href="#effect">기대효과</a>
+        <a href="#community">커뮤니티</a>
+      </div>
+      <div class="ftl-col">
+        <div class="ftl-head">기술스택</div>
+        <a href="#">Supabase</a>
+        <a href="#">Vercel</a>
+        <a href="#">GitHub</a>
+        <a href="#">Claude Code</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 AI바이브웹. All rights reserved.</span>
+    <span>HTML5 · CSS3 · JavaScript · Supabase · Vercel</span>
   </div>
 </footer>
 

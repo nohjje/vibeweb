@@ -1,65 +1,62 @@
 /* ═══════════════════════════════════════════
-   AI 바이브웹 — main.js  v2.0
+   AI 바이브웹 — main.js  v3.0
 ═══════════════════════════════════════════ */
 
-// ─── Header scroll effect ─────────────────────
+// ─── Header scroll ───────────────────────────
 const header = document.getElementById('header');
 window.addEventListener('scroll', () => {
-  header.classList.toggle('scrolled', window.scrollY > 30);
+  header.classList.toggle('scrolled', window.scrollY > 40);
 }, { passive: true });
 
 // ─── Scroll Reveal ────────────────────────────
 const revealObs = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      revealObs.unobserve(entry.target);
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObs.unobserve(e.target);
     }
   });
-}, { threshold: 0.10 });
-
+}, { threshold: 0.08 });
 document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
-// ─── Bar Chart Animation ──────────────────────
+// ─── Bar fill animation ────────────────────────
 const barObs = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.querySelectorAll('.bar-fill').forEach(bar => {
-        const target = bar.dataset.w;
-        setTimeout(() => { bar.style.width = target; }, 200);
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.eff-bar-fill').forEach((bar, i) => {
+        setTimeout(() => { bar.style.width = bar.dataset.w; }, i * 120);
       });
-      barObs.unobserve(entry.target);
+      barObs.unobserve(e.target);
     }
   });
-}, { threshold: 0.3 });
+}, { threshold: 0.2 });
+const effSection = document.querySelector('#effect');
+if (effSection) barObs.observe(effSection);
 
-const chartWrap = document.querySelector('.chart-wrap');
-if (chartWrap) barObs.observe(chartWrap);
+// ─── Active flow step cycling ──────────────────
+const flSteps = document.querySelectorAll('.fl-step');
+if (flSteps.length) {
+  let idx = 2; // start at "코드 완성"
+  setInterval(() => {
+    flSteps.forEach(s => s.classList.remove('active'));
+    flSteps[idx % flSteps.length].classList.add('active');
+    idx++;
+  }, 1600);
+}
 
-// ─── Smooth nav highlight on scroll ──────────
+// ─── Smooth nav highlight ──────────────────────
 const sections = document.querySelectorAll('section[id]');
-const navLinks  = document.querySelectorAll('nav > a[href^="#"]');
-
+const navLinks  = document.querySelectorAll('nav a[href^="#"]');
 const secObs = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
       navLinks.forEach(link => {
-        const isMatch = link.getAttribute('href') === '#' + entry.target.id;
-        if (!link.classList.contains('btn-cta')) {
-          link.style.color = isMatch ? 'var(--brown)' : '';
+        const match = link.getAttribute('href') === '#' + e.target.id;
+        if (!link.classList.contains('btn-fill') && !link.classList.contains('btn-outline')) {
+          link.style.color = match ? '#fff' : '';
         }
       });
     }
   });
-}, { threshold: 0.45 });
-
+}, { threshold: 0.4 });
 sections.forEach(s => secObs.observe(s));
-
-// ─── Active flow node on scroll ──────────────
-const flowNodes = document.querySelectorAll('.flow-node');
-let flowIdx = 0;
-setInterval(() => {
-  flowNodes.forEach(n => n.classList.remove('active'));
-  flowNodes[flowIdx % flowNodes.length]?.classList.add('active');
-  flowIdx++;
-}, 1400);
