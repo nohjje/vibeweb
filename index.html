@@ -15,6 +15,7 @@
 <!-- ════════════ HEADER ════════════ -->
 <header id="header">
   <div class="header-inner">
+  
     <a href="#" class="logo">AI 바이브<span>웹</span></a>
     <nav>
       <a href="#intro">소개</a>
@@ -24,8 +25,9 @@
       <a href="#community">커뮤니티</a>
     </nav>
     <div class="header-cta">
-      <a href="#community" class="btn-outline">로그인</a>
-      <a href="#community" class="btn-fill">무료로 시작하기</a>
+      <button class="btn-outline" id="btn-login-header" onclick="openLoginModal()">로그인</button>
+      <button class="btn-fill" id="btn-logout-header" style="display:none" onclick="logout()">로그아웃</button>
+      <a href="#community" class="btn-fill" id="btn-start">무료로 시작하기</a>
     </div>
   </div>
 </header>
@@ -363,7 +365,7 @@
       <p class="sec-p reveal d2">로그인 후 자유게시판, Q&amp;A, 프로젝트 공유가 가능합니다.</p>
     </div>
     <div class="comm-bento">
-      <div class="cb-card wide reveal d1">
+      <a href="board.html" class="cb-card wide reveal d1" style="text-decoration:none;display:block">
         <div class="cb-icon">💬</div>
         <h3>자유게시판</h3>
         <p>수강생들과 학습 경험을 자유롭게 나눕니다.</p>
@@ -372,20 +374,20 @@
           <div class="cbp-row"><div class="cbp-avatar"></div><div class="cbp-text"><div class="cbp-t"></div><div class="cbp-s"></div></div></div>
           <div class="cbp-row muted"><div class="cbp-avatar"></div><div class="cbp-text"><div class="cbp-t"></div><div class="cbp-s"></div></div></div>
         </div>
-        <div class="cb-lock">🔒 로그인 후 이용</div>
-      </div>
-      <div class="cb-card reveal d2">
+        <div class="cb-lock">→ 게시판 바로가기</div>
+      </a>
+      <a href="board.html?cat=question" class="cb-card reveal d2" style="text-decoration:none;display:block">
         <div class="cb-icon">🙋</div>
         <h3>질문·답변</h3>
         <p>막히는 부분을 질문하고 서로 도움을 주고받습니다.</p>
-        <div class="cb-lock">🔒 로그인 후 이용</div>
-      </div>
-      <div class="cb-card reveal d3">
+        <div class="cb-lock">→ 질문 바로가기</div>
+      </a>
+      <a href="board.html?cat=share" class="cb-card reveal d3" style="text-decoration:none;display:block">
         <div class="cb-icon">🗂️</div>
         <h3>프로젝트 공유</h3>
         <p>완성한 프로젝트를 공유하고 피드백을 받으세요.</p>
-        <div class="cb-lock">🔒 로그인 후 이용</div>
-      </div>
+        <div class="cb-lock">→ 공유 바로가기</div>
+      </a>
     </div>
     <!-- CTA -->
     <div class="cta-block reveal">
@@ -436,6 +438,137 @@
   </div>
 </footer>
 
+<!-- ════════════ LOGIN MODAL ════════════ -->
+<div id="login-modal" onclick="closeModalOutside(event)" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.55);z-index:9999;align-items:center;justify-content:center;padding:20px;">
+  <div style="background:#fff;border:1px solid rgba(30,22,18,.12);border-radius:28px;padding:44px 40px;max-width:440px;width:100%;position:relative;animation:modalIn .3s cubic-bezier(.22,.68,0,1.2);" onclick="event.stopPropagation()">
+    <button onclick="closeLoginModal()" style="position:absolute;top:16px;right:18px;background:none;border:none;font-size:1.2rem;cursor:pointer;color:rgba(26,18,16,.35);">✕</button>
+    <div style="font-size:2.4rem;text-align:center;margin-bottom:16px">🔐</div>
+    <h2 style="font-family:var(--font-sans);font-size:1.5rem;font-weight:800;color:#1A1210;text-align:center;margin-bottom:8px;letter-spacing:-.025em" id="modal-title">로그인</h2>
+    <p style="font-size:.875rem;color:rgba(26,18,16,.5);text-align:center;margin-bottom:24px;line-height:1.6">게시글 작성·댓글은 로그인 후 이용할 수 있습니다.</p>
+
+    <div style="display:flex;background:#F3EDE3;border-radius:8px;padding:3px;margin-bottom:24px">
+      <button id="tab-login" onclick="switchTab('login')" style="flex:1;padding:8px;border-radius:6px;border:none;background:var(--coral);color:#fff;font-family:var(--font-sans);font-size:.85rem;font-weight:600;cursor:pointer">로그인</button>
+      <button id="tab-signup" onclick="switchTab('signup')" style="flex:1;padding:8px;border-radius:6px;border:none;background:transparent;color:rgba(26,18,16,.5);font-family:var(--font-sans);font-size:.85rem;font-weight:600;cursor:pointer">회원가입</button>
+    </div>
+
+    <div style="margin-bottom:14px">
+      <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(26,18,16,.4);margin-bottom:6px">이메일</label>
+      <input id="modal-email" type="email" placeholder="email@example.com" style="width:100%;background:#FAF7F2;border:1px solid rgba(30,22,18,.12);border-radius:8px;color:#1A1210;font-family:var(--font-sans);font-size:.9rem;padding:11px 16px;outline:none;box-sizing:border-box"/>
+    </div>
+    <div id="modal-name-group" style="display:none;margin-bottom:14px">
+      <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(26,18,16,.4);margin-bottom:6px">닉네임</label>
+      <input id="modal-name" type="text" placeholder="사용할 닉네임" style="width:100%;background:#FAF7F2;border:1px solid rgba(30,22,18,.12);border-radius:8px;color:#1A1210;font-family:var(--font-sans);font-size:.9rem;padding:11px 16px;outline:none;box-sizing:border-box"/>
+    </div>
+    <div style="margin-bottom:18px">
+      <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(26,18,16,.4);margin-bottom:6px">비밀번호</label>
+      <input id="modal-pw" type="password" placeholder="••••••••" style="width:100%;background:#FAF7F2;border:1px solid rgba(30,22,18,.12);border-radius:8px;color:#1A1210;font-family:var(--font-sans);font-size:.9rem;padding:11px 16px;outline:none;box-sizing:border-box"/>
+    </div>
+    <button id="modal-submit" onclick="handleAuth()" style="width:100%;padding:13px;background:var(--coral);color:#fff;border:none;border-radius:14px;font-family:var(--font-sans);font-size:.95rem;font-weight:700;cursor:pointer">로그인</button>
+    <div id="modal-msg" style="text-align:center;font-size:.82rem;margin-top:14px;color:rgba(26,18,16,.45)">
+      계정이 없으신가요? <a onclick="switchTab('signup')" style="color:var(--coral);cursor:pointer;font-weight:600">회원가입</a>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div id="toast" style="position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(16px);background:#1E1612;border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:13px 22px;font-size:.875rem;color:#fff;font-weight:600;z-index:10000;opacity:0;transition:opacity .25s,transform .25s;pointer-events:none;white-space:nowrap"></div>
+
+<style>
+@keyframes modalIn { from{opacity:0;transform:translateY(20px) scale(.97)} to{opacity:1;transform:translateY(0) scale(1)} }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 <script src="js/main.js"></script>
+<script>
+const SUPABASE_URL  = 'https://xeijqaxadxhykrduwgow.supabase.co';
+const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhlaWpxYXhhZHhoeWtyZHV3Z293Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYxMDg5MTIsImV4cCI6MjA4MTY4NDkxMn0.E2_P5IQXG4X8K6mhCO-al_SqSGFDn3yh-xrV-zhecps';
+const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+
+let modalMode = 'login';
+
+function openLoginModal() {
+  document.getElementById('login-modal').style.display = 'flex';
+}
+function closeLoginModal() {
+  document.getElementById('login-modal').style.display = 'none';
+}
+function closeModalOutside(e) {
+  if (e.target === document.getElementById('login-modal')) closeLoginModal();
+}
+
+function switchTab(mode) {
+  modalMode = mode;
+  const isLogin = mode === 'login';
+  document.getElementById('tab-login').style.cssText  = 'flex:1;padding:8px;border-radius:6px;border:none;font-family:var(--font-sans);font-size:.85rem;font-weight:600;cursor:pointer;background:' + (isLogin ? 'var(--coral);color:#fff' : 'transparent;color:rgba(26,18,16,.5)');
+  document.getElementById('tab-signup').style.cssText = 'flex:1;padding:8px;border-radius:6px;border:none;font-family:var(--font-sans);font-size:.85rem;font-weight:600;cursor:pointer;background:' + (isLogin ? 'transparent;color:rgba(26,18,16,.5)' : 'var(--coral);color:#fff');
+  document.getElementById('modal-name-group').style.display = isLogin ? 'none' : 'block';
+  document.getElementById('modal-submit').textContent = isLogin ? '로그인' : '회원가입';
+  document.getElementById('modal-title').textContent  = isLogin ? '로그인' : '회원가입';
+  document.getElementById('modal-msg').innerHTML = isLogin
+    ? '계정이 없으신가요? <a onclick="switchTab(\'signup\')" style="color:var(--coral);cursor:pointer;font-weight:600">회원가입</a>'
+    : '이미 계정이 있으신가요? <a onclick="switchTab(\'login\')" style="color:var(--coral);cursor:pointer;font-weight:600">로그인</a>';
+}
+
+async function handleAuth() {
+  const email = document.getElementById('modal-email').value.trim();
+  const pw    = document.getElementById('modal-pw').value;
+  if (!email || !pw) { showToast('⚠️ 이메일과 비밀번호를 입력하세요'); return; }
+  const btn = document.getElementById('modal-submit');
+  btn.textContent = '처리 중...'; btn.disabled = true;
+  if (modalMode === 'signup') {
+    const name = document.getElementById('modal-name').value.trim() || email.split('@')[0];
+    const { data, error } = await sb.auth.signUp({ email, password: pw, options: { data: { name } } });
+    if (error) {
+      if (error.message.includes('rate limit') || error.message.includes('Rate limit'))
+        showToast('⏳ 잠시 후 다시 시도해주세요 (Supabase → Auth → Email → Confirm email OFF 설정 필요)');
+      else if (error.message.includes('already registered') || error.message.includes('already been registered'))
+        showToast('⚠️ 이미 가입된 이메일입니다. 로그인 탭을 이용해주세요.');
+      else
+        showToast('❌ ' + error.message);
+    } else if (data.session) { showToast('🎉 가입 완료! 환영합니다, ' + name + '님!'); closeLoginModal(); }
+    else { showToast('⚙️ Supabase 설정 필요: Authentication → Email → Confirm email OFF'); closeLoginModal(); }
+  } else {
+    const { error } = await sb.auth.signInWithPassword({ email, password: pw });
+    if (error) {
+      if (error.message.includes('Email not confirmed'))
+        showToast('📧 이메일 인증 필요 — Supabase에서 Confirm email을 OFF로 설정하세요');
+      else if (error.message.includes('Invalid login credentials'))
+        showToast('❌ 이메일 또는 비밀번호가 틀렸습니다');
+      else
+        showToast('❌ ' + error.message);
+    } else { showToast('✅ 로그인 성공!'); closeLoginModal(); }
+  }
+  btn.disabled = false;
+  btn.textContent = modalMode === 'login' ? '로그인' : '회원가입';
+}
+
+async function logout() {
+  await sb.auth.signOut();
+  showToast('👋 로그아웃 되었습니다');
+}
+
+function showToast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg; el.style.opacity = '1'; el.style.transform = 'translateX(-50%) translateY(0)';
+  clearTimeout(el._t); el._t = setTimeout(() => { el.style.opacity='0'; el.style.transform='translateX(-50%) translateY(16px)'; }, 2800);
+}
+
+// 세션 복원 및 UI 업데이트
+document.addEventListener('DOMContentLoaded', async () => {
+  const { data: { session } } = await sb.auth.getSession();
+  updateAuthUI(session);
+  sb.auth.onAuthStateChange((_e, session) => updateAuthUI(session));
+});
+
+function updateAuthUI(session) {
+  const on = !!session;
+  document.getElementById('btn-login-header').style.display  = on ? 'none' : '';
+  document.getElementById('btn-logout-header').style.display = on ? '' : 'none';
+  if (on) {
+    const name = session.user.user_metadata?.name || session.user.email.split('@')[0];
+    document.getElementById('btn-logout-header').textContent = name + ' 로그아웃';
+  }
+}
+</script>
 </body>
 </html>
