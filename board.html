@@ -6,18 +6,18 @@
   <title>커뮤니티 게시판 — AI 바이브웹</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <style>
     /* ═══ BOARD LIGHT THEME OVERRIDE ═══ */
     :root {
       --bg-dark:    #FAF7F2;
       --bg-card:    #FFFFFF;
-      --bg-border:  rgba(30,22,18,.10);
-      --border-d:   rgba(30,22,18,.12);
+      --bg-border:  rgba(30, 22, 18, .10);
+      --border-d:   rgba(30, 22, 18, .12);
       --tx-white:   #1E1612;
-      --tx-dim:     rgba(30,22,18,.65);
-      --tx-dimmer:  rgba(30,22,18,.38);
+      --tx-dim:     #3D2E24;
+      --tx-dimmer:  #6B5C52;
     }
     body {
       background: #FAF7F2;
@@ -239,7 +239,7 @@
       border-radius: 4px;
       white-space: nowrap;
     }
-    .cat-badge.general  { background: rgba(30,22,18,.07); color: rgba(30,22,18,.45); }
+    .cat-badge.general  { background: rgba(30, 22, 18, .07); color: #6B5C52; }
     .cat-badge.question { background: rgba(107,143,113,.15); color: #6B8F71; }
     .cat-badge.share    { background: rgba(232,97,58,.12); color: var(--coral); }
     .cat-badge.notice   { background: rgba(255,220,100,.12); color: #F5C842; }
@@ -342,7 +342,18 @@
       transition: all .2s;
       margin-bottom: 28px;
     }
-    .detail-back-btn:hover { color: #1E1612; border-color: rgba(30,22,18,.3); }
+    .detail-back-btn:hover { color: #1E1612; border-color: rgba(30, 22, 18, .3); }
+
+    .post-nav {
+      display: flex;
+      gap: 10px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .post-nav-next {
+      margin-left: auto;
+    }
 
     .detail-card {
       background: #FFFFFF;
@@ -759,7 +770,7 @@
       line-height: 1.6;
     }
     .modal-form .form-group { margin-bottom: 16px; }
-    .modal-form .form-label { color: rgba(30,22,18,.45); }
+    .modal-form .form-label { color: #6B5C52; }
     .modal-form .form-input {
       background: #FAF7F2;
       border-color: rgba(30,22,18,.12);
@@ -1067,9 +1078,9 @@
         </div>
 
         <!-- Nav between posts -->
-        <div style="display:flex; gap:10px; margin-top:16px; flex-wrap:wrap">
+        <div class="post-nav">
           <button class="detail-back-btn" onclick="goPrevPost()" id="prev-post-btn">← 이전글</button>
-          <button class="detail-back-btn" onclick="goNextPost()" id="next-post-btn" style="margin-left:auto">다음글 →</button>
+          <button class="detail-back-btn post-nav-next" onclick="goNextPost()" id="next-post-btn">다음글 →</button>
         </div>
       </div>
 
@@ -1231,8 +1242,20 @@ let editPostId   = null;
 let attachedFiles = [];
 let posts        = [];
 
-function lsGet(key, fb) { try { const v=localStorage.getItem(key); return v!==null?v:fb; } catch(e){return fb;} }
-function lsSet(key, v)  { try { localStorage.setItem(key, v); } catch(e){} }
+function lsGet(key, fb) {
+  try {
+    const v = localStorage.getItem(key);
+    return v !== null ? v : fb;
+  } catch (e) {
+    return fb;
+  }
+}
+
+function lsSet(key, v) {
+  try {
+    localStorage.setItem(key, v);
+  } catch (e) {}
+}
 let likedPosts = new Set(JSON.parse(lsGet('liked','[]')));
 
 /* ══════════════════════════════════════════════════
@@ -1389,7 +1412,12 @@ function renderList() {
   const empty  = document.getElementById('empty-list');
   const pagDiv = document.getElementById('pagination');
 
-  if (total === 0) { tbody.innerHTML=''; empty.style.display='block'; pagDiv.innerHTML=''; return; }
+  if (total === 0) {
+    tbody.innerHTML = '';
+    empty.style.display = 'block';
+    pagDiv.innerHTML = '';
+    return;
+  }
   empty.style.display = 'none';
 
   const totalPages = Math.ceil(total / PAGE_SIZE);
@@ -1625,27 +1653,42 @@ async function submitPost() {
       files: fileNames.length ? fileNames : (currentPost.files||[]),
       updated_at: new Date().toISOString()
     }).eq('id', editPostId);
-    if (error) { showToast('❌ 수정 실패: '+error.message); }
-    else {
-      const p = posts.find(p=>p.id===editPostId);
-      if (p) { p.title=title; p.content=content; p.category=category; }
+    if (error) {
+      showToast('❌ 수정 실패: ' + error.message);
+    } else {
+      const p = posts.find(p => p.id === editPostId);
+      if (p) {
+        p.title    = title;
+        p.content  = content;
+        p.category = category;
+      }
       showToast('✅ 글이 수정되었습니다');
       openPost(editPostId);
     }
   } else {
     const { data, error } = await sb.from('posts').insert({
-      title, content, category, files: fileNames,
-      author: currentUser.name, author_id: currentUser.id
+      title,
+      content,
+      category,
+      files:     fileNames,
+      author:    currentUser.name,
+      author_id: currentUser.id
     }).select().single();
-    if (error) { showToast('❌ 등록 실패: '+error.message); }
-    else {
-      posts.unshift(data); currentPage=1;
+
+    if (error) {
+      showToast('❌ 등록 실패: ' + error.message);
+    } else {
+      posts.unshift(data);
+      currentPage = 1;
       showToast('🎉 글이 등록되었습니다!');
       openPost(data.id);
     }
   }
 
-  if (btn) { btn.textContent='등록하기 →'; btn.disabled=false; }
+  if (btn) {
+    btn.textContent = '등록하기 →';
+    btn.disabled = false;
+  }
 }
 
 function cancelWrite() {
@@ -1689,34 +1732,47 @@ function setupFileUploadDrag() {
 function setupWriteCharCount() {
   const ta = document.getElementById('write-content');
   if (!ta) return;
-  ta.addEventListener('input', ()=>{ document.getElementById('write-char-count').textContent=ta.value.length; });
+  ta.addEventListener('input', () => {
+    document.getElementById('write-char-count').textContent = ta.value.length;
+  });
 }
 
 /* ══════════════════════════════════════════════════
    VIEW SWITCHING
 ══════════════════════════════════════════════════ */
 function showList() {
-  currentPost=null; currentView='list'; switchView('list'); renderList();
+  currentPost = null;
+  currentView = 'list';
+  switchView('list');
+  renderList();
 }
 function switchView(view) {
-  document.getElementById('view-list').style.display   = view==='list'   ? '' : 'none';
-  document.getElementById('view-detail').style.display = view==='detail' ? '' : 'none';
-  document.getElementById('view-write').style.display  = view==='write'  ? '' : 'none';
-  window.scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('view-list').style.display   = view === 'list'   ? 'block' : 'none';
+  document.getElementById('view-detail').style.display = view === 'detail' ? 'block' : 'none';
+  document.getElementById('view-write').style.display  = view === 'write'  ? 'block' : 'none';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 /* ══════════════════════════════════════════════════
    HELPERS
 ══════════════════════════════════════════════════ */
 function getCatInfo(cat) {
-  return ({notice:{label:'공지'},general:{label:'일반'},question:{label:'질문'},share:{label:'공유'}})[cat] || {label:cat};
+  const map = {
+    notice:   { label: '공지' },
+    general:  { label: '일반' },
+    question: { label: '질문' },
+    share:    { label: '공유' }
+  };
+  return map[cat] || { label: cat };
 }
+
 function formatDate(dateStr) {
-  const d=new Date(dateStr), diff=new Date()-d;
-  if (diff<60000)    return '방금 전';
-  if (diff<3600000)  return Math.floor(diff/60000)+'분 전';
-  if (diff<86400000) return Math.floor(diff/3600000)+'시간 전';
-  return d.toLocaleDateString('ko-KR',{month:'2-digit',day:'2-digit'});
+  const d    = new Date(dateStr);
+  const diff = new Date() - d;
+  if (diff < 60000)    return '방금 전';
+  if (diff < 3600000)  return Math.floor(diff / 60000) + '분 전';
+  if (diff < 86400000) return Math.floor(diff / 3600000) + '시간 전';
+  return d.toLocaleDateString('ko-KR', { month: '2-digit', day: '2-digit' });
 }
 function formatDateFull(dateStr) {
   const d=new Date(dateStr);

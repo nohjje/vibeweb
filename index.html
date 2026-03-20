@@ -7,7 +7,7 @@
   <meta name="description" content="AI와 대화하듯 개발하는 바이브코딩. 기획부터 배포까지 실무급 프로젝트를 완성하는 가장 빠른 방법입니다." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -36,81 +36,205 @@
 <section id="hero">
   <div class="hero-ambient a1"></div>
   <div class="hero-ambient a2"></div>
-  <div class="hero-ambient a3"></div>
 
-  <div class="hero-inner">
+  <!-- 가운데 1컬럼 -->
+  <div class="hero-center">
+
+    <!-- 뱃지 + 버튼 -->
     <div class="hero-badge reveal">
       <span class="badge-pulse"></span>
-      AI 시대의 새로운 개발 방식 &nbsp;·&nbsp; 바이브코딩
+      지금 <strong>127명</strong>이 함께 배우고 있어요
     </div>
-    <h1 class="hero-h1 reveal d1">
-      코드 없이<br>
-      <em>AI와 함께</em><br>
-      실무 프로젝트 완성
-    </h1>
-    <p class="hero-sub reveal d2">
-      바이브코딩으로 기획부터 배포까지.<br>
-      문법 암기 없이 누구나 풀스택 개발을 경험합니다.
+
+    <div class="hero-btns reveal d2">
+      <button class="btn-fill hero-cta-btn" onclick="openLoginModal()">지금 시작하기 →</button>
+    </div>
+
+    <!-- 에디터 위 h1 -->
+    <h1 class="hero-h1 reveal d3">코딩 없이도 <em>AI로 웹사이트 완성</em></h1>
+
+    <!-- 코드 에디터 -->
+    <div class="hv-editor reveal d3">
+
+      <!-- 타이틀바 -->
+      <div class="hv-titlebar">
+        <div class="hv-dots">
+          <div class="hv-dot r"></div>
+          <div class="hv-dot y"></div>
+          <div class="hv-dot g"></div>
+        </div>
+        <div class="hv-tabs">
+          <div class="hv-tab active">index.html</div>
+          <div class="hv-tab">style.css</div>
+          <div class="hv-tab">main.js</div>
+        </div>
+        <div class="hv-ai-badge">
+          <div class="hv-ai-dot"></div>
+          AI 작성 중
+        </div>
+      </div>
+
+      <!-- 코드 영역 -->
+      <div class="hv-code-area">
+        <div class="hv-line-nums">
+          <span>1</span><span>2</span><span>3</span><span>4</span>
+          <span>5</span><span>6</span><span>7</span><span>8</span>
+          <span>9</span><span>10</span>
+        </div>
+        <div class="hv-code-content">
+          <div class="hv-cl"><span class="s-tag">&lt;section</span> <span class="s-attr">class</span>=<span class="s-str">"hero"</span><span class="s-tag">&gt;</span></div>
+          <div class="hv-cl i1"><span class="s-tag">&lt;div</span> <span class="s-attr">class</span>=<span class="s-str">"hero-inner"</span><span class="s-tag">&gt;</span></div>
+          <div class="hv-cl i2"><span class="s-tag">&lt;h1&gt;</span><span class="s-tx">AI와 함께 만드는 웹</span><span class="s-tag">&lt;/h1&gt;</span></div>
+          <div class="hv-cl i2 hv-highlight"><span class="s-tag">&lt;button</span> <span class="s-attr">onclick</span>=<span class="s-str">"openModal()"</span><span class="s-tag">&gt;</span></div>
+          <div class="hv-cl i3 hv-highlight"><span class="s-tx">무료로 시작하기</span><span class="hv-cursor">▌</span></div>
+          <div class="hv-cl i2 hv-highlight"><span class="s-tag">&lt;/button&gt;</span></div>
+          <div class="hv-cl i1"><span class="s-tag">&lt;/div&gt;</span></div>
+          <div class="hv-cl"><span class="s-tag">&lt;/section&gt;</span></div>
+          <div class="hv-cl">&nbsp;</div>
+          <div class="hv-cl"><span class="s-cm">/* Supabase Auth 연결 완료 ✓ */</span></div>
+        </div>
+      </div>
+
+      <!-- AI 제안 -->
+      <div class="hv-suggestion">
+        <div class="hv-sug-label">AI 제안</div>
+        <div class="hv-sug-text">hero 섹션 스타일 최적화 완료 — 적용할까요?</div>
+        <div class="hv-sug-btns">
+          <button class="hv-sug-accept">적용</button>
+          <button class="hv-sug-dismiss">건너뜀</button>
+        </div>
+      </div>
+
+      <!-- 상태바 -->
+      <div class="hv-statusbar">
+        <span class="hv-sb-branch">⑂ main</span>
+        <span class="hv-sb-ok">✓ 0 오류</span>
+        <span>UTF-8</span>
+        <span style="margin-left:auto">Claude Code</span>
+      </div>
+
+    </div>
+
+    <!-- 에디터 아래 h1 -->
+    <h1 class="hero-h1 hero-h1-sub reveal d4">아이디어를 <em>바로 웹으로</em></h1>
+
+    <!-- 설명 문구 -->
+    <p class="hero-sub reveal d4">
+      AI에게 말하듯 원하는 것을 설명하면,<br>
+      코드·디자인·배포까지 AI가 완성합니다.
     </p>
-    <div class="hero-btns reveal d3">
-      <a href="#community" class="btn-fill btn-lg">무료로 시작하기 →</a>
-      <a href="#intro" class="btn-outline btn-lg">바이브코딩이란?</a>
-    </div>
-    <div class="hero-stats reveal d4">
-      <div class="hstat">
-        <span class="hstat-n">1/5</span>
-        <span class="hstat-l">기존 대비 학습 시간</span>
-      </div>
-      <span class="hstat-div"></span>
-      <div class="hstat">
-        <span class="hstat-n">4개</span>
-        <span class="hstat-l">실전 프로젝트</span>
-      </div>
-      <span class="hstat-div"></span>
-      <div class="hstat">
-        <span class="hstat-n">전연령</span>
-        <span class="hstat-l">누구나 수강 가능</span>
-      </div>
-      <span class="hstat-div"></span>
-      <div class="hstat">
-        <span class="hstat-n">100%</span>
-        <span class="hstat-l">실제 배포 프로젝트</span>
-      </div>
-    </div>
+
+    <a href="#intro" class="btn-outline reveal d4" style="margin-top:8px">더 알아보기 ↓</a>
+
   </div>
 
-  <!-- Browser Mockup -->
-  <div class="mockup-stage reveal d4">
-    <div class="mockup-bar">
-      <span class="mb-dot r"></span><span class="mb-dot y"></span><span class="mb-dot g"></span>
-      <div class="mb-url">vibeweb.vercel.app</div>
-      <div class="mb-icons">⟳ ↗</div>
-    </div>
-    <div class="mockup-content">
-      <div class="sim-nav">
-        <div class="sim-logo"></div>
-        <div class="sim-links">
-          <div class="sl"></div><div class="sl"></div><div class="sl"></div>
-          <div class="sl-btn"></div>
-        </div>
+  <!-- 하단 풀폭: 3단계 + 결과물 + 소셜 프루프 -->
+  <div class="hero-bottom">
+
+    <!-- 3단계 프로세스 -->
+    <div class="hero-steps reveal d4">
+      <div class="hs-step">
+        <div class="hs-num">1</div>
+        <div class="hs-icon">💬</div>
+        <div class="hs-label">AI에게 말하기</div>
+        <div class="hs-desc">"쇼핑몰 만들어줘"<br>라고 입력하면 끝</div>
       </div>
-      <div class="sim-hero">
-        <div class="sh-badge"></div>
-        <div class="sh-h1"></div>
-        <div class="sh-h2"></div>
-        <div class="sh-btns"><div class="sh-b1"></div><div class="sh-b2"></div></div>
-        <div class="sh-cards">
-          <div class="shc" style="animation-delay:0s"></div>
-          <div class="shc" style="animation-delay:.15s"></div>
-          <div class="shc" style="animation-delay:.3s"></div>
-          <div class="shc" style="animation-delay:.45s"></div>
-        </div>
+      <div class="hs-arrow">→</div>
+      <div class="hs-step">
+        <div class="hs-num">2</div>
+        <div class="hs-icon">🤖</div>
+        <div class="hs-label">AI가 자동 제작</div>
+        <div class="hs-desc">코드·디자인·기능<br>AI가 전부 만들어요</div>
+      </div>
+      <div class="hs-arrow">→</div>
+      <div class="hs-step">
+        <div class="hs-num">3</div>
+        <div class="hs-icon">🌐</div>
+        <div class="hs-label">인터넷에 배포</div>
+        <div class="hs-desc">내 URL로 전세계에<br>공개되는 내 사이트</div>
       </div>
     </div>
-    <div class="mk-badge mk1"><span>✅</span><div><strong>배포 완료</strong><br><small>vibeweb.vercel.app</small></div></div>
-    <div class="mk-badge mk2"><span>⚡</span><div><strong>AI 생성</strong><br><small>Claude Code</small></div></div>
-    <div class="mk-badge mk3"><span>🔥</span><div><strong>실시간 저장</strong><br><small>Supabase DB</small></div></div>
+
+    <!-- 결과물 미리보기 카드들 -->
+    <div class="hero-results reveal d5">
+      <div class="hr-label">📌 수강생 완성 예시</div>
+      <div class="hr-cards">
+        <div class="hr-card">
+          <div class="hr-card-top" style="background:linear-gradient(135deg,#E8613A22,#E8613A08)">
+            <div class="hr-mock-nav">
+              <div class="hr-mock-logo"></div>
+              <div class="hr-mock-links"><span></span><span></span><span></span></div>
+            </div>
+            <div class="hr-mock-hero">
+              <div class="hr-mock-h1"></div>
+              <div class="hr-mock-h2"></div>
+              <div class="hr-mock-btn"></div>
+            </div>
+          </div>
+          <div class="hr-card-info">
+            <div class="hr-card-title">☕ 카페 홍보 사이트</div>
+            <div class="hr-card-meta">수강 3일차 완성 · <span class="hr-live">● 운영 중</span></div>
+          </div>
+        </div>
+        <div class="hr-card hr-card-active">
+          <div class="hr-card-top" style="background:linear-gradient(135deg,#6B8F7122,#6B8F7108)">
+            <div class="hr-mock-nav">
+              <div class="hr-mock-logo"></div>
+              <div class="hr-mock-links"><span></span><span></span><span></span></div>
+            </div>
+            <div class="hr-mock-hero">
+              <div class="hr-mock-h1"></div>
+              <div class="hr-mock-h2"></div>
+              <div class="hr-mock-btn" style="background:#6B8F71"></div>
+            </div>
+            <div class="hr-mock-cards">
+              <div class="hr-mc"></div>
+              <div class="hr-mc"></div>
+              <div class="hr-mc"></div>
+            </div>
+          </div>
+          <div class="hr-card-info">
+            <div class="hr-card-title">🛍 쇼핑몰 메인</div>
+            <div class="hr-card-meta">수강 1주차 완성 · <span class="hr-live">● 운영 중</span></div>
+          </div>
+        </div>
+        <div class="hr-card">
+          <div class="hr-card-top" style="background:linear-gradient(135deg,#79B8FF22,#79B8FF08)">
+            <div class="hr-mock-nav">
+              <div class="hr-mock-logo"></div>
+              <div class="hr-mock-links"><span></span><span></span><span></span></div>
+            </div>
+            <div class="hr-mock-hero">
+              <div class="hr-mock-h1"></div>
+              <div class="hr-mock-h2"></div>
+              <div class="hr-mock-btn" style="background:#79B8FF"></div>
+            </div>
+          </div>
+          <div class="hr-card-info">
+            <div class="hr-card-title">📋 포트폴리오</div>
+            <div class="hr-card-meta">수강 2주차 완성 · <span class="hr-live">● 운영 중</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 소셜 프루프 -->
+    <div class="hero-proof reveal d5">
+      <div class="hp-avatars">
+        <div class="hp-av" style="background:#E8613A">김</div>
+        <div class="hp-av" style="background:#6B8F71">이</div>
+        <div class="hp-av" style="background:#79B8FF">박</div>
+        <div class="hp-av" style="background:#FFBD2E">최</div>
+        <div class="hp-av" style="background:#F97583">정</div>
+      </div>
+      <div class="hp-text">
+        <strong>127명</strong>이 이미 첫 웹사이트를 완성했어요
+      </div>
+      <div class="hp-stars">★★★★★ <span>4.9</span></div>
+    </div>
+
   </div>
+
 </section>
 
 <!-- ════════════ LOGO STRIP ════════════ -->
@@ -130,69 +254,72 @@
 <!-- ════════════ 소개 SECTION ════════════ -->
 <section id="intro" class="section-dark">
   <div class="container">
-    <div class="intro-layout">
-      <div class="intro-left">
+    <div class="intro-block">
+      <div class="sec-center">
         <span class="sec-chip reveal">소개</span>
-        <h2 class="sec-h2 reveal d1">일반 코딩과<br>무엇이 다른가요?</h2>
-        <p class="sec-p reveal d2">바이브코딩은 AI와 대화하는 것처럼 개발합니다. 문법을 외울 필요 없이, 원하는 것을 말하면 AI가 코드를 완성합니다.</p>
-        <div class="compare-visual reveal d3">
-          <div class="cv-col old">
-            <div class="cv-head"><span class="cv-icon">🐢</span><span class="cv-title">일반 코딩</span></div>
-            <div class="cv-steps">
-              <div class="cv-step">문법 암기</div>
-              <div class="cv-arrow">↓</div>
-              <div class="cv-step">코드 작성</div>
-              <div class="cv-arrow">↓</div>
-              <div class="cv-step">에러 디버깅</div>
-              <div class="cv-arrow">↓</div>
-              <div class="cv-step">결과 확인</div>
-            </div>
-            <div class="cv-result bad">긴 학습 곡선 😓</div>
+        <h2 class="sec-h2 reveal d1">일반 코딩과 무엇이 다른가요?</h2>
+        <p class="sec-p reveal d2">바이브코딩은 AI와 대화하듯 개발합니다.<br>문법을 외울 필요 없이, 원하는 것을 말하면 AI가 코드를 완성합니다.</p>
+      </div>
+      <div class="compare-visual reveal d3">
+        <div class="cv-col old">
+          <div class="cv-head"><span class="cv-icon">🐢</span><span class="cv-title">일반 코딩</span></div>
+          <div class="cv-steps">
+            <div class="cv-step">문법 암기</div>
+            <div class="cv-arrow">↓</div>
+            <div class="cv-step">코드 작성</div>
+            <div class="cv-arrow">↓</div>
+            <div class="cv-step">에러 디버깅</div>
+            <div class="cv-arrow">↓</div>
+            <div class="cv-step">결과 확인</div>
           </div>
-          <div class="cv-vs">VS</div>
-          <div class="cv-col new">
-            <div class="cv-head"><span class="cv-icon">🚀</span><span class="cv-title">바이브코딩</span></div>
-            <div class="cv-steps">
-              <div class="cv-step hi">AI와 대화</div>
-              <div class="cv-arrow">↓</div>
-              <div class="cv-step hi">즉각 구현</div>
-              <div class="cv-arrow">↓</div>
-              <div class="cv-step hi">빠른 수정</div>
-              <div class="cv-arrow">↓</div>
-              <div class="cv-step hi">실시간 배포</div>
-            </div>
-            <div class="cv-result good">빠른 완성 🎉</div>
+          <div class="cv-result bad">긴 학습 곡선 😓</div>
+        </div>
+        <div class="cv-vs">VS</div>
+        <div class="cv-col new">
+          <div class="cv-head"><span class="cv-icon">🚀</span><span class="cv-title">바이브코딩</span></div>
+          <div class="cv-steps">
+            <div class="cv-step hi">AI와 대화</div>
+            <div class="cv-arrow">↓</div>
+            <div class="cv-step hi">즉각 구현</div>
+            <div class="cv-arrow">↓</div>
+            <div class="cv-step hi">빠른 수정</div>
+            <div class="cv-arrow">↓</div>
+            <div class="cv-step hi">실시간 배포</div>
           </div>
+          <div class="cv-result good">빠른 완성 🎉</div>
         </div>
       </div>
-      <div class="intro-right">
+    </div>
+    <div class="forecast-block">
+      <div class="sec-center">
         <span class="sec-chip reveal">전망</span>
         <h2 class="sec-h2 reveal d1">AI 개발의 미래</h2>
-        <div class="forecast-grid">
-          <div class="fc-card reveal d2">
-            <div class="fc-num">01</div>
-            <div class="fc-icon-lg">📈</div>
-            <h4>업계 표준으로 자리잡는 추세</h4>
-            <p>AI 보조 개발이 개발자의 기본 역량으로 자리잡고 있습니다.</p>
-          </div>
-          <div class="fc-card reveal d3">
-            <div class="fc-num">02</div>
-            <div class="fc-icon-lg">🔄</div>
-            <h4>개발자 역할의 진화</h4>
-            <p>"코드 작성자"에서 "프로젝트 기획·관리자"로 역할이 변화합니다.</p>
-          </div>
-          <div class="fc-card reveal d4">
-            <div class="fc-num">03</div>
-            <div class="fc-icon-lg">🌍</div>
-            <h4>비전공자도 실무급 구현</h4>
-            <p>누구나 실무급 프로젝트를 만들 수 있는 시대가 왔습니다.</p>
-          </div>
-          <div class="fc-card reveal d5">
-            <div class="fc-num">04</div>
-            <div class="fc-icon-lg">⚡</div>
-            <h4>빠른 프로토타이핑</h4>
-            <p>아이디어를 즉시 구현하고 피드백을 받는 빠른 개발 사이클.</p>
-          </div>
+        <p class="sec-p reveal d2">AI 보조 개발은 이미 업계 표준이 되고 있습니다.<br>지금 시작하면 앞서갈 수 있습니다.</p>
+      </div>
+      <div class="forecast-grid">
+        <div class="fc-card reveal d2">
+          <div class="fc-num">01</div>
+          <div class="fc-icon-lg">📈</div>
+          <h4>업계 표준으로 자리잡는 추세</h4>
+          <p>AI 보조 개발이 개발자의 기본 역량으로 자리잡고 있습니다.</p>
+        </div>
+        <div class="fc-card reveal d3">
+          <div class="fc-num">02</div>
+          <div class="fc-icon-lg">🔄</div>
+          <h4>개발자 역할의 진화</h4>
+          <p>"코드 작성자"에서 "프로젝트 기획·관리자"로 역할이 변화합니다.</p>
+        </div>
+        <div class="fc-card reveal d4">
+          <div class="fc-num">03</div>
+          <div class="fc-icon-lg">🌍</div>
+          <h4>비전공자도 실무급 구현</h4>
+          <p>누구나 실무급 프로젝트를 만들 수 있는 시대가 왔습니다.</p>
+        </div>
+        <div class="fc-card reveal d5">
+          <div class="fc-num">04</div>
+          <div class="fc-icon-lg">⚡</div>
+          <h4>빠른 프로토타이핑</h4>
+          <p>아이디어를 즉시 구현하고 피드백을 받는 빠른 개발 사이클.</p>
         </div>
       </div>
     </div>
@@ -439,136 +566,440 @@
 </footer>
 
 <!-- ════════════ LOGIN MODAL ════════════ -->
-<div id="login-modal" onclick="closeModalOutside(event)" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.55);z-index:9999;align-items:center;justify-content:center;padding:20px;">
-  <div style="background:#fff;border:1px solid rgba(30,22,18,.12);border-radius:28px;padding:44px 40px;max-width:440px;width:100%;position:relative;animation:modalIn .3s cubic-bezier(.22,.68,0,1.2);" onclick="event.stopPropagation()">
-    <button onclick="closeLoginModal()" style="position:absolute;top:16px;right:18px;background:none;border:none;font-size:1.2rem;cursor:pointer;color:rgba(26,18,16,.35);">✕</button>
-    <div style="font-size:2.4rem;text-align:center;margin-bottom:16px">🔐</div>
-    <h2 style="font-family:var(--font-sans);font-size:1.5rem;font-weight:800;color:#1A1210;text-align:center;margin-bottom:8px;letter-spacing:-.025em" id="modal-title">로그인</h2>
-    <p style="font-size:.875rem;color:rgba(26,18,16,.5);text-align:center;margin-bottom:24px;line-height:1.6">게시글 작성·댓글은 로그인 후 이용할 수 있습니다.</p>
+<div id="login-modal" class="modal-overlay" onclick="closeModalOutside(event)">
+  <div class="modal-card" onclick="event.stopPropagation()">
 
-    <div style="display:flex;background:#F3EDE3;border-radius:8px;padding:3px;margin-bottom:24px">
-      <button id="tab-login" onclick="switchTab('login')" style="flex:1;padding:8px;border-radius:6px;border:none;background:var(--coral);color:#fff;font-family:var(--font-sans);font-size:.85rem;font-weight:600;cursor:pointer">로그인</button>
-      <button id="tab-signup" onclick="switchTab('signup')" style="flex:1;padding:8px;border-radius:6px;border:none;background:transparent;color:rgba(26,18,16,.5);font-family:var(--font-sans);font-size:.85rem;font-weight:600;cursor:pointer">회원가입</button>
+    <button class="modal-close-btn" onclick="closeLoginModal()">✕</button>
+
+    <div class="modal-icon">🔐</div>
+    <h2 class="modal-title" id="modal-title">로그인</h2>
+    <p class="modal-subtitle">게시글 작성·댓글은 로그인 후 이용할 수 있습니다.</p>
+
+    <div class="modal-tabs">
+      <button id="tab-login" class="modal-tab active" onclick="switchTab('login')">로그인</button>
+      <button id="tab-signup" class="modal-tab" onclick="switchTab('signup')">회원가입</button>
     </div>
 
-    <div style="margin-bottom:14px">
-      <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(26,18,16,.4);margin-bottom:6px">이메일</label>
-      <input id="modal-email" type="email" placeholder="email@example.com" style="width:100%;background:#FAF7F2;border:1px solid rgba(30,22,18,.12);border-radius:8px;color:#1A1210;font-family:var(--font-sans);font-size:.9rem;padding:11px 16px;outline:none;box-sizing:border-box"/>
+    <div class="modal-field">
+      <label class="modal-label">이메일</label>
+      <input id="modal-email" type="email" class="modal-input" placeholder="email@example.com" />
     </div>
-    <div id="modal-name-group" style="display:none;margin-bottom:14px">
-      <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(26,18,16,.4);margin-bottom:6px">닉네임</label>
-      <input id="modal-name" type="text" placeholder="사용할 닉네임" style="width:100%;background:#FAF7F2;border:1px solid rgba(30,22,18,.12);border-radius:8px;color:#1A1210;font-family:var(--font-sans);font-size:.9rem;padding:11px 16px;outline:none;box-sizing:border-box"/>
+
+    <div id="modal-name-group" class="modal-field" style="display:none">
+      <label class="modal-label">닉네임</label>
+      <input id="modal-name" type="text" class="modal-input" placeholder="사용할 닉네임" />
     </div>
-    <div style="margin-bottom:18px">
-      <label style="display:block;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(26,18,16,.4);margin-bottom:6px">비밀번호</label>
-      <input id="modal-pw" type="password" placeholder="••••••••" style="width:100%;background:#FAF7F2;border:1px solid rgba(30,22,18,.12);border-radius:8px;color:#1A1210;font-family:var(--font-sans);font-size:.9rem;padding:11px 16px;outline:none;box-sizing:border-box"/>
+
+    <div class="modal-field modal-field-last">
+      <label class="modal-label">비밀번호</label>
+      <input id="modal-pw" type="password" class="modal-input" placeholder="••••••••" />
     </div>
-    <button id="modal-submit" onclick="handleAuth()" style="width:100%;padding:13px;background:var(--coral);color:#fff;border:none;border-radius:14px;font-family:var(--font-sans);font-size:.95rem;font-weight:700;cursor:pointer">로그인</button>
-    <div id="modal-msg" style="text-align:center;font-size:.82rem;margin-top:14px;color:rgba(26,18,16,.45)">
-      계정이 없으신가요? <a onclick="switchTab('signup')" style="color:var(--coral);cursor:pointer;font-weight:600">회원가입</a>
+
+    <button id="modal-submit" class="modal-submit" onclick="handleAuth()">로그인</button>
+
+    <div id="modal-msg" class="modal-footer">
+      계정이 없으신가요?
+      <a onclick="switchTab('signup')" class="modal-link">회원가입</a>
     </div>
+
   </div>
 </div>
 
 <!-- Toast -->
-<div id="toast" style="position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(16px);background:#1E1612;border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:13px 22px;font-size:.875rem;color:#fff;font-weight:600;z-index:10000;opacity:0;transition:opacity .25s,transform .25s;pointer-events:none;white-space:nowrap"></div>
+<div id="toast" class="toast"></div>
 
 <style>
-@keyframes modalIn { from{opacity:0;transform:translateY(20px) scale(.97)} to{opacity:1;transform:translateY(0) scale(1)} }
+  /* ── 모달 공통 ───────────────────────────── */
+  @keyframes modalIn {
+    from { opacity: 0; transform: translateY(20px) scale(.97); }
+    to   { opacity: 1; transform: translateY(0)    scale(1);   }
+  }
+
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, .55);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .modal-card {
+    background: #fff;
+    border: 1px solid rgba(30, 22, 18, .12);
+    border-radius: 28px;
+    padding: 44px 40px;
+    max-width: 440px;
+    width: 100%;
+    position: relative;
+    animation: modalIn .3s cubic-bezier(.22, .68, 0, 1.2);
+  }
+
+  .modal-close-btn {
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #8C7B6E;
+  }
+
+  .modal-icon {
+    font-size: 2.4rem;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .modal-title {
+    font-family: var(--font-sans);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #1A1210;
+    text-align: center;
+    margin-bottom: 8px;
+    letter-spacing: -.025em;
+  }
+
+  .modal-subtitle {
+    font-size: .875rem;
+    color: #6B5C52;
+    text-align: center;
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  .modal-tabs {
+    display: flex;
+    background: #F3EDE3;
+    border-radius: 8px;
+    padding: 3px;
+    margin-bottom: 24px;
+  }
+
+  .modal-tab {
+    flex: 1;
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    background: transparent;
+    color: #6B5C52;
+    font-family: var(--font-sans);
+    font-size: .85rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .modal-tab.active {
+    background: var(--coral);
+    color: #fff;
+  }
+
+  .modal-field {
+    margin-bottom: 14px;
+  }
+
+  .modal-field-last {
+    margin-bottom: 18px;
+  }
+
+  .modal-label {
+    display: block;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #6B5C52;
+    margin-bottom: 6px;
+  }
+
+  .modal-input {
+    width: 100%;
+    background: #FAF7F2;
+    border: 1px solid rgba(30, 22, 18, .12);
+    border-radius: 8px;
+    color: #1A1210;
+    font-family: var(--font-sans);
+    font-size: .9rem;
+    padding: 11px 16px;
+    outline: none;
+    box-sizing: border-box;
+  }
+
+  .modal-submit {
+    width: 100%;
+    padding: 13px;
+    background: var(--coral);
+    color: #fff;
+    border: none;
+    border-radius: 14px;
+    font-family: var(--font-sans);
+    font-size: .95rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .modal-footer {
+    text-align: center;
+    font-size: .82rem;
+    margin-top: 14px;
+    color: #6B5C52;
+  }
+
+  .modal-link {
+    color: var(--coral);
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  /* ── 토스트 ───────────────────────────────── */
+  .toast {
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%) translateY(16px);
+    background: #1E1612;
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: 14px;
+    padding: 13px 22px;
+    font-size: .875rem;
+    color: #fff;
+    font-weight: 600;
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity .25s, transform .25s;
+    pointer-events: none;
+    white-space: nowrap;
+  }
 </style>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 <script src="js/main.js"></script>
 <script>
-const SUPABASE_URL  = 'https://xeijqaxadxhykrduwgow.supabase.co';
-const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhlaWpxYXhhZHhoeWtyZHV3Z293Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYxMDg5MTIsImV4cCI6MjA4MTY4NDkxMn0.E2_P5IQXG4X8K6mhCO-al_SqSGFDn3yh-xrV-zhecps';
-const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+  /* ── 에디터 탭 순환 애니메이션 ── */
+  const editorScenes = [
+    {
+      tab: 'index.html',
+      lines: [
+        `<span class="s-tag">&lt;section</span> <span class="s-attr">class</span>=<span class="s-str">"hero"</span><span class="s-tag">&gt;</span>`,
+        `<span class="s-tag">&lt;div</span> <span class="s-attr">class</span>=<span class="s-str">"hero-inner"</span><span class="s-tag">&gt;</span>`,
+        `<span class="s-tag">&lt;h1&gt;</span><span class="s-tx">AI와 함께 만드는 웹</span><span class="s-tag">&lt;/h1&gt;</span>`,
+        `<span class="s-tag">&lt;button</span> <span class="s-attr">onclick</span>=<span class="s-str">"openModal()"</span><span class="s-tag">&gt;</span>`,
+        `  <span class="s-tx">무료로 시작하기</span><span class="hv-cursor">▌</span>`,
+        `<span class="s-tag">&lt;/button&gt;</span>`,
+        `<span class="s-tag">&lt;/div&gt;</span>`,
+        `<span class="s-tag">&lt;/section&gt;</span>`,
+        ``,
+        `<span class="s-cm">/* Supabase Auth 연결 완료 ✓ */</span>`,
+      ]
+    },
+    {
+      tab: 'style.css',
+      lines: [
+        `<span class="s-attr">.hero</span> <span class="s-tag">{</span>`,
+        `  <span class="s-attr">background</span>: <span class="s-str">#FAF7F2</span>;`,
+        `  <span class="s-attr">padding</span>: <span class="s-str">120px 48px</span>;`,
+        `  <span class="s-attr">display</span>: <span class="s-str">grid</span>;`,
+        `  <span class="s-attr">grid-template-columns</span>: <span class="s-str">1fr 1fr</span>;<span class="hv-cursor">▌</span>`,
+        `<span class="s-tag">}</span>`,
+        ``,
+        `<span class="s-attr">.hero h1</span> <span class="s-tag">{</span>`,
+        `  <span class="s-attr">font-size</span>: <span class="s-str">clamp(3rem, 5vw, 5.6rem)</span>;`,
+        `  <span class="s-attr">color</span>: <span class="s-str">#E8613A</span>;`,
+      ]
+    },
+    {
+      tab: 'main.js',
+      lines: [
+        `<span class="s-cm">// Supabase 초기화</span>`,
+        `<span class="s-tag">const</span> <span class="s-attr">sb</span> = supabase`,
+        `  .<span class="s-attr">createClient</span>(URL, KEY);`,
+        ``,
+        `<span class="s-tag">async function</span> <span class="s-attr">loadPosts</span>() <span class="s-tag">{</span>`,
+        `  <span class="s-tag">const</span> { <span class="s-attr">data</span> } = <span class="s-tag">await</span>`,
+        `    sb.<span class="s-attr">from</span>(<span class="s-str">'posts'</span>)<span class="hv-cursor">▌</span>`,
+        `      .<span class="s-attr">select</span>(<span class="s-str">'*'</span>)`,
+        `      .<span class="s-attr">order</span>(<span class="s-str">'created_at'</span>);`,
+        `<span class="s-tag">}</span>`,
+      ]
+    }
+  ];
 
-let modalMode = 'login';
+  let sceneIdx = 0;
 
-function openLoginModal() {
-  document.getElementById('login-modal').style.display = 'flex';
-}
-function closeLoginModal() {
-  document.getElementById('login-modal').style.display = 'none';
-}
-function closeModalOutside(e) {
-  if (e.target === document.getElementById('login-modal')) closeLoginModal();
-}
+  function runEditorAnim() {
+    const scene = editorScenes[sceneIdx % editorScenes.length];
+    sceneIdx++;
 
-function switchTab(mode) {
-  modalMode = mode;
-  const isLogin = mode === 'login';
-  document.getElementById('tab-login').style.cssText  = 'flex:1;padding:8px;border-radius:6px;border:none;font-family:var(--font-sans);font-size:.85rem;font-weight:600;cursor:pointer;background:' + (isLogin ? 'var(--coral);color:#fff' : 'transparent;color:rgba(26,18,16,.5)');
-  document.getElementById('tab-signup').style.cssText = 'flex:1;padding:8px;border-radius:6px;border:none;font-family:var(--font-sans);font-size:.85rem;font-weight:600;cursor:pointer;background:' + (isLogin ? 'transparent;color:rgba(26,18,16,.5)' : 'var(--coral);color:#fff');
-  document.getElementById('modal-name-group').style.display = isLogin ? 'none' : 'block';
-  document.getElementById('modal-submit').textContent = isLogin ? '로그인' : '회원가입';
-  document.getElementById('modal-title').textContent  = isLogin ? '로그인' : '회원가입';
-  document.getElementById('modal-msg').innerHTML = isLogin
-    ? '계정이 없으신가요? <a onclick="switchTab(\'signup\')" style="color:var(--coral);cursor:pointer;font-weight:600">회원가입</a>'
-    : '이미 계정이 있으신가요? <a onclick="switchTab(\'login\')" style="color:var(--coral);cursor:pointer;font-weight:600">로그인</a>';
-}
+    // 탭 전환
+    document.querySelectorAll('.hv-tab').forEach(t => {
+      t.classList.toggle('active', t.textContent.trim() === scene.tab);
+    });
 
-async function handleAuth() {
-  const email = document.getElementById('modal-email').value.trim();
-  const pw    = document.getElementById('modal-pw').value;
-  if (!email || !pw) { showToast('⚠️ 이메일과 비밀번호를 입력하세요'); return; }
-  const btn = document.getElementById('modal-submit');
-  btn.textContent = '처리 중...'; btn.disabled = true;
-  if (modalMode === 'signup') {
-    const name = document.getElementById('modal-name').value.trim() || email.split('@')[0];
-    const { data, error } = await sb.auth.signUp({ email, password: pw, options: { data: { name } } });
-    if (error) {
-      if (error.message.includes('rate limit') || error.message.includes('Rate limit'))
-        showToast('⏳ 잠시 후 다시 시도해주세요 (Supabase → Auth → Email → Confirm email OFF 설정 필요)');
-      else if (error.message.includes('already registered') || error.message.includes('already been registered'))
-        showToast('⚠️ 이미 가입된 이메일입니다. 로그인 탭을 이용해주세요.');
-      else
-        showToast('❌ ' + error.message);
-    } else if (data.session) { showToast('🎉 가입 완료! 환영합니다, ' + name + '님!'); closeLoginModal(); }
-    else { showToast('⚙️ Supabase 설정 필요: Authentication → Email → Confirm email OFF'); closeLoginModal(); }
-  } else {
-    const { error } = await sb.auth.signInWithPassword({ email, password: pw });
-    if (error) {
-      if (error.message.includes('Email not confirmed'))
-        showToast('📧 이메일 인증 필요 — Supabase에서 Confirm email을 OFF로 설정하세요');
-      else if (error.message.includes('Invalid login credentials'))
-        showToast('❌ 이메일 또는 비밀번호가 틀렸습니다');
-      else
-        showToast('❌ ' + error.message);
-    } else { showToast('✅ 로그인 성공!'); closeLoginModal(); }
+    // 코드 라인 교체
+    const content  = document.querySelector('.hv-code-content');
+    const lineNums = document.querySelector('.hv-line-nums');
+    if (!content || !lineNums) return;
+
+    content.style.opacity = '0';
+    content.style.transition = 'opacity .3s';
+
+    setTimeout(() => {
+      const indents = [0, 1, 2, 3, 2, 1, 0, 0, 0, 0];
+      content.innerHTML = scene.lines.map((line, i) => {
+        const indent      = indents[i] || 0;
+        const isHighlight = i >= 3 && i <= 5 && scene.tab === 'index.html';
+        const cls = [
+          'hv-cl',
+          indent ? 'i' + indent : '',
+          isHighlight ? 'hv-highlight' : ''
+        ].filter(Boolean).join(' ');
+        return `<div class="${cls}">${line || '&nbsp;'}</div>`;
+      }).join('');
+
+      lineNums.innerHTML = scene.lines
+        .map((_, i) => `<span>${i + 1}</span>`)
+        .join('');
+
+      content.style.opacity = '1';
+    }, 300);
+
+    setTimeout(runEditorAnim, 3500);
   }
-  btn.disabled = false;
-  btn.textContent = modalMode === 'login' ? '로그인' : '회원가입';
-}
 
-async function logout() {
-  await sb.auth.signOut();
-  showToast('👋 로그아웃 되었습니다');
-}
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(runEditorAnim, 1500);
+  });
+</script>
+<script>
+  const SUPABASE_URL  = 'https://xeijqaxadxhykrduwgow.supabase.co';
+  const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhlaWpxYXhhZHhoeWtyZHV3Z293Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYxMDg5MTIsImV4cCI6MjA4MTY4NDkxMn0.E2_P5IQXG4X8K6mhCO-al_SqSGFDn3yh-xrV-zhecps';
+  const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
 
-function showToast(msg) {
-  const el = document.getElementById('toast');
-  el.textContent = msg; el.style.opacity = '1'; el.style.transform = 'translateX(-50%) translateY(0)';
-  clearTimeout(el._t); el._t = setTimeout(() => { el.style.opacity='0'; el.style.transform='translateX(-50%) translateY(16px)'; }, 2800);
-}
+  let modalMode = 'login';
 
-// 세션 복원 및 UI 업데이트
-document.addEventListener('DOMContentLoaded', async () => {
-  const { data: { session } } = await sb.auth.getSession();
-  updateAuthUI(session);
-  sb.auth.onAuthStateChange((_e, session) => updateAuthUI(session));
-});
-
-function updateAuthUI(session) {
-  const on = !!session;
-  document.getElementById('btn-login-header').style.display  = on ? 'none' : '';
-  document.getElementById('btn-logout-header').style.display = on ? '' : 'none';
-  if (on) {
-    const name = session.user.user_metadata?.name || session.user.email.split('@')[0];
-    document.getElementById('btn-logout-header').textContent = name + ' 로그아웃';
+  function openLoginModal() {
+    document.getElementById('login-modal').style.display = 'flex';
   }
-}
+
+  function closeLoginModal() {
+    document.getElementById('login-modal').style.display = 'none';
+  }
+
+  function closeModalOutside(e) {
+    if (e.target === document.getElementById('login-modal')) {
+      closeLoginModal();
+    }
+  }
+
+  function switchTab(mode) {
+    modalMode = mode;
+    const isLogin = mode === 'login';
+
+    document.getElementById('tab-login').classList.toggle('active', isLogin);
+    document.getElementById('tab-signup').classList.toggle('active', !isLogin);
+    document.getElementById('modal-name-group').style.display = isLogin ? 'none' : 'block';
+    document.getElementById('modal-submit').textContent = isLogin ? '로그인' : '회원가입';
+    document.getElementById('modal-title').textContent  = isLogin ? '로그인' : '회원가입';
+    document.getElementById('modal-msg').innerHTML = isLogin
+      ? '계정이 없으신가요? <a onclick="switchTab(\'signup\')" class="modal-link">회원가입</a>'
+      : '이미 계정이 있으신가요? <a onclick="switchTab(\'login\')" class="modal-link">로그인</a>';
+  }
+
+  async function handleAuth() {
+    const email = document.getElementById('modal-email').value.trim();
+    const pw    = document.getElementById('modal-pw').value;
+
+    if (!email || !pw) {
+      showToast('⚠️ 이메일과 비밀번호를 입력하세요');
+      return;
+    }
+
+    const btn = document.getElementById('modal-submit');
+    btn.textContent = '처리 중...';
+    btn.disabled = true;
+
+    if (modalMode === 'signup') {
+      const name = document.getElementById('modal-name').value.trim() || email.split('@')[0];
+      const { data, error } = await sb.auth.signUp({
+        email,
+        password: pw,
+        options: { data: { name } }
+      });
+
+      if (error) {
+        if (error.message.includes('rate limit') || error.message.includes('Rate limit')) {
+          showToast('⏳ 잠시 후 다시 시도해주세요 (Supabase → Auth → Email → Confirm email OFF 설정 필요)');
+        } else if (error.message.includes('already registered') || error.message.includes('already been registered')) {
+          showToast('⚠️ 이미 가입된 이메일입니다. 로그인 탭을 이용해주세요.');
+        } else {
+          showToast('❌ ' + error.message);
+        }
+      } else if (data.session) {
+        showToast('🎉 가입 완료! 환영합니다, ' + name + '님!');
+        closeLoginModal();
+      } else {
+        showToast('⚙️ Supabase 설정 필요: Authentication → Email → Confirm email OFF');
+        closeLoginModal();
+      }
+
+    } else {
+      const { error } = await sb.auth.signInWithPassword({ email, password: pw });
+
+      if (error) {
+        if (error.message.includes('Email not confirmed')) {
+          showToast('📧 이메일 인증 필요 — Supabase에서 Confirm email을 OFF로 설정하세요');
+        } else if (error.message.includes('Invalid login credentials')) {
+          showToast('❌ 이메일 또는 비밀번호가 틀렸습니다');
+        } else {
+          showToast('❌ ' + error.message);
+        }
+      } else {
+        showToast('✅ 로그인 성공!');
+        closeLoginModal();
+      }
+    }
+
+    btn.disabled = false;
+    btn.textContent = modalMode === 'login' ? '로그인' : '회원가입';
+  }
+
+  async function logout() {
+    await sb.auth.signOut();
+    showToast('👋 로그아웃 되었습니다');
+  }
+
+  function showToast(msg) {
+    const el = document.getElementById('toast');
+    el.textContent = msg;
+    el.style.opacity = '1';
+    el.style.transform = 'translateX(-50%) translateY(0)';
+    clearTimeout(el._t);
+    el._t = setTimeout(() => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateX(-50%) translateY(16px)';
+    }, 2800);
+  }
+
+  // 세션 복원 및 UI 업데이트
+  document.addEventListener('DOMContentLoaded', async () => {
+    const { data: { session } } = await sb.auth.getSession();
+    updateAuthUI(session);
+    sb.auth.onAuthStateChange((_e, session) => updateAuthUI(session));
+  });
+
+  function updateAuthUI(session) {
+    const on = !!session;
+    document.getElementById('btn-login-header').style.display  = on ? 'none' : '';
+    document.getElementById('btn-logout-header').style.display = on ? '' : 'none';
+    if (on) {
+      const name = session.user.user_metadata?.name || session.user.email.split('@')[0];
+      document.getElementById('btn-logout-header').textContent = name + ' 로그아웃';
+    }
+  }
 </script>
 </body>
 </html>
